@@ -1,0 +1,10 @@
+.skip {
+    position: fixed;
+    top: -30px;
+}
+
+.skip:focus {
+    top: 10px;
+    left: 10px;
+}
+
