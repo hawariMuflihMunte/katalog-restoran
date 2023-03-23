@@ -1,2 +1,83 @@
+@use './fonts';
 @use './skip';
+@use './mobile/mobile';
+@use './utils/colors';
 
+body {
+    background-color: azure;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 38px;
+
+    background-color: white;
+
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .nav-brand {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+
+        font-size: 26px;
+        font-weight: 800;
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .item {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .item a {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: 200ms linear;
+        }
+
+        .item a:hover {
+            scale: 1.145;
+        }
+
+        span[class*="material"] {
+            font-size: inherit;
+        }
+    }
+}
+
+section.hero-banner {
+    img {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 1200px) {
+        img {
+            min-width: 1000px;
+        }
+    }
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 80%;
+}

@@ -1,0 +1,54 @@
+// Custom app styling
+
+$color-100: #ECF9FF;
+$color-200: #FFFBEB;
+$color-300: #FFE7CC;
+$color-400: #F8CBA6;
+
+.bg-100 {
+    background-color: $color-100;
+}
+
+.text-100 {
+    color: $color-100;
+}
+
+.bg-200 {
+    background-color: $color-200;
+}
+
+.text-200 {
+    color: $color-200;
+}
+
+.bg-300 {
+    background-color: $color-300;
+}
+
+.text-300 {
+    color: $color-300;
+}
+
+.bg-400 {
+    background-color: $color-400;
+}
+
+.text-400 {
+    color: $color-400;
+}
+
+// End Custom app styling
+
+/*
+ * Additional styling
+ */
+
+$color-neutral: #5a5a5a;
+
+.bg-neutral {
+    background-color: $color-neutral;
+}
+
+.text-neutral {
+    color: $color-neutral;
+}

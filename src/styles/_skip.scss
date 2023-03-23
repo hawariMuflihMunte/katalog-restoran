@@ -1,10 +1,12 @@
 .skip {
     position: fixed;
-    top: -30px;
+    top: -100%;
+    background-color: darkblue;
+    color: white;
+    text-decoration: none;
 }
 
 .skip:focus {
     top: 10px;
     left: 10px;
 }
-
