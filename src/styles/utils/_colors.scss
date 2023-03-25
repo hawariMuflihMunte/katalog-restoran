@@ -1,4 +1,4 @@
-@import '../mobile/mobile-breakpoints.scss';
+@import '../mobile/mobile-breakpoints';
 
 // Custom app styling
 
@@ -51,6 +51,15 @@ $color-black: #000;
 $color-neutral: #5a5a5a;
 $color-dark: #212129;
 
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+.text-transparent {
+    color: transparent;
+}
+
 .bg-neutral {
     background-color: $color-neutral;
 }
@@ -60,11 +69,21 @@ $color-dark: #212129;
 }
 
 @media screen and (max-width: $xs) {
-    .bg-neutral\@\xs {
+    .bg-neutral-xs {
         background-color: $color-neutral;
     }
 
-    .text-neutral\@\xs {
+    .text-neutral-xs {
+        color: $color-neutral;
+    }
+}
+
+@media screen and (max-width: $s) {
+    .bg-neutral-s {
+        background-color: $color-neutral;
+    }
+
+    .text-neutral-s {
         color: $color-neutral;
     }
 }

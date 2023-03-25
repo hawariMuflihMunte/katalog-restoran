@@ -77,20 +77,19 @@ img {
         }
 
         .nav-menu {
-            background-color: white;
             flex-direction: column;
             place-content: center;
             place-items: center;
             position: absolute;
-
             top: 36px;
+
             z-index: 10;
             gap: 0;
             row-gap: 10px;
             width: 100%;
-
             padding: 15px 0;
-            border-top: 1px solid;
+
+            // border-top: 1px solid;
         }
 
         .nav-menu .item {
@@ -142,4 +141,12 @@ section.hero-banner {
 
 p {
     max-width: 66ch;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    place-content: center;
+    place-items: center;
 }
