@@ -1,11 +1,11 @@
 import 'regenerator-runtime' /* for async await transpile */
 import '../styles/main.scss'
 import 'normalize.css'
-import axios from 'axios'
+import DATA from '../data/DATA.json'
 
 async function main () {
   try {
-    const response = await axios.get('https://api.jikan.moe/v4/anime?q=chainsaw&sfw')
+    const response = await fetch(DATA)
     console.log(response)
   } catch (err) {
     console.log(err)
