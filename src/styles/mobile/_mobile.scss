@@ -1,26 +1,24 @@
 @import './mobile-breakpoints.scss';
 
 a {
+    display: block;
     padding: 0.2em;
 }
 
 @media screen and (max-width: $xs) {
     a {
-        display: block;
         padding: 22px;
     }
 }
 
 @media screen and (max-width: $s) {
     a {
-        display: block;
         padding: 0.6em;
     }
 }
 
 @media screen and (max-width: $m) {
     a {
-        display: block;
         padding: 0.3em;
     }
 }
