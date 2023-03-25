@@ -29,7 +29,7 @@
     }
 }
 
-@media screen and (max-width: $xl) {
+@media screen and (min-width: $xl) {
     .display-none-xl {
         display: none;
     }
@@ -67,7 +67,7 @@
     }
 }
 
-@media screen and (max-width: $xl) {
+@media screen and (min-width: $xl) {
     .display-block-xl {
         display: block;
     }
@@ -103,7 +103,7 @@
     }
 }
 
-@media screen and (max-width: $xl) {
+@media screen and (min-width: $xl) {
     .display-inline-xl {
         display: inline;
     }
@@ -139,7 +139,7 @@
     }
 }
 
-@media screen and (max-width: $xl) {
+@media screen and (min-width: $xl) {
     .display-flex-xl {
         display: flex;
     }
@@ -175,7 +175,7 @@
     }
 }
 
-@media screen and (max-width: $xl) {
+@media screen and (min-width: $xl) {
     .display-grid-xl {
         display: grid;
     }
