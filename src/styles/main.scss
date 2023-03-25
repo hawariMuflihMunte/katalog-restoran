@@ -7,6 +7,7 @@
 
 body {
     background-color: azure;
+    overflow-x: hidden;
 }
 
 img {
@@ -89,7 +90,38 @@ img {
             width: 100%;
             padding: 15px 0;
 
-            // border-top: 1px solid;
+            transform: translateX(100%);
+            transition: 80ms linear;
+            border-top: 1px solid #afafaf;
+        }
+
+        @keyframes show {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .show {
+            transform: translateX(0%);
+            animation-name: show;
+            animation-duration: 300ms;
+            animation-timing-function: linear;
+        }
+
+        @keyframes hide {
+            to {
+                opacity: 0;
+            }
+        }
+
+        .hide {
+            transform: translateX(100%);
+            animation-name: hide;
+            animation-duration: 1ms;
+            animation-timing-function: linear;
         }
 
         .nav-menu .item {
@@ -149,4 +181,5 @@ button {
     display: flex;
     place-content: center;
     place-items: center;
+
 }
