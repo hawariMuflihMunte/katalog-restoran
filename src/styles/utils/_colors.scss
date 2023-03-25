@@ -1,3 +1,5 @@
+@import '../mobile/mobile-breakpoints.scss';
+
 // Custom app styling
 
 $color-100: #ECF9FF;
@@ -43,7 +45,11 @@ $color-400: #F8CBA6;
  * Additional styling
  */
 
+$color-white: #fff;
+$color-black: #000;
+
 $color-neutral: #5a5a5a;
+$color-dark: #212129;
 
 .bg-neutral {
     background-color: $color-neutral;
@@ -51,4 +57,50 @@ $color-neutral: #5a5a5a;
 
 .text-neutral {
     color: $color-neutral;
+}
+
+@media screen and (max-width: $xs) {
+    .bg-neutral\@\xs {
+        background-color: $color-neutral;
+    }
+
+    .text-neutral\@\xs {
+        color: $color-neutral;
+    }
+}
+
+.bg-white {
+    background-color: $color-white;
+}
+
+.text-white {
+    color: $color-white;
+}
+
+@media screen and (max-width: $xs) {
+    .bg-white {
+        background-color: $color-white;
+    }
+
+    .text-white {
+        color: $color-white;
+    }
+}
+
+.bg-black {
+    background-color: $color-black;
+}
+
+.text-black {
+    color: $color-black;
+}
+
+@media screen and (max-width: $xs) {
+    .bg-white {
+        background-color: $color-white;
+    }
+
+    .text-white {
+        color: $color-white;
+    }
 }
