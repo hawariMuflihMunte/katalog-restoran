@@ -91,7 +91,9 @@ img {
             padding: 15px 0;
 
             transform: translateX(100%);
-            transition: 80ms linear;
+            // transition: 80ms linear;
+            opacity: 0;
+            display: none;
             border-top: 1px solid #afafaf;
         }
 
@@ -100,12 +102,15 @@ img {
                 opacity: 0;
             }
             100% {
+                display: flex;
                 opacity: 1;
             }
         }
 
         .show {
             transform: translateX(0%);
+            display: flex;
+            opacity: 1;
             animation-name: show;
             animation-duration: 300ms;
             animation-timing-function: linear;
