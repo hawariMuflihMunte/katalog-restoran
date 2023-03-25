@@ -113,11 +113,11 @@ img {
 section.hero-banner {
     img {
         width: 100%;
-    }
 
-    @media screen and (min-width: 1200px) {
-        img {
-            min-width: 1000px;
+        @media screen and (min-width: 1200px) {
+            & {
+                min-width: 1000px;
+            }
         }
     }
 }
@@ -125,4 +125,16 @@ section.hero-banner {
 .container {
     margin: 0 auto;
     max-width: 80%;
+
+    @media screen and (max-width: $xs) {
+        & {
+            max-width: 96%;
+        }
+    }
+
+    @media screen and (max-width: $s) {
+        & {
+            max-width: 85%;
+        }
+    }
 }
