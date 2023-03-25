@@ -1,0 +1,82 @@
+@import './variables';
+
+.margin-x-axis-a {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin-x-axis-n {
+    margin-left: none;
+    margin-right: none;
+}
+
+.margin-x-axis-xxs {
+    margin-left: $xxs;
+    margin-right: $xxs;
+}
+
+.margin-x-axis-xs {
+    margin-left: $xs;
+    margin-right: $xs;
+}
+
+.margin-x-axis-s {
+    margin-left: $s;
+    margin-right: $s;
+}
+
+.margin-x-axis-m {
+    margin-left: $m;
+    margin-right: $m;
+}
+
+.margin-x-axis-l {
+    margin-left: $l;
+    margin-right: $l;
+}
+
+.margin-x-axis-xl {
+    margin-left: $xl;
+    margin-right: $xl;
+}
+
+.margin-x-axis-xxl {
+    margin-left: $xxl;
+    margin-right: $xxl;
+}
+
+// Minus modifier ( -- )
+.margin-x-axis--xxs {
+    margin-left: -($xxs);
+    margin-right: -($xxs);
+}
+
+.margin-x-axis--xs {
+    margin-left: -($xs);
+    margin-right: -($xs);
+}
+
+.margin-x-axis--s {
+    margin-left: -($s);
+    margin-right: -($s);
+}
+
+.margin-x-axis--m {
+    margin-left: -($m);
+    margin-right: -($m);
+}
+
+.margin-x-axis--l {
+    margin-left: -($l);
+    margin-right: -($l);
+}
+
+.margin-x-axis--xl {
+    margin-left: -($xl);
+    margin-right: -($xl);
+}
+
+.margin-x-axis--xxl {
+    margin-left: -($xxl);
+    margin-right: -($xxl);
+}

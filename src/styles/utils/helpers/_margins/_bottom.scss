@@ -1,0 +1,66 @@
+@import './variables';
+
+.margin-bottom-a {
+    margin-bottom: auto;
+}
+
+.margin-bottom-n {
+    margin-bottom: none;
+}
+
+.margin-bottom-xxs {
+    margin-bottom: $xxs;
+}
+
+.margin-bottom-xs {
+    margin-bottom: $xs;
+}
+
+.margin-bottom-s {
+    margin-bottom: $s;
+}
+
+.margin-bottom-m {
+    margin-bottom: $m;
+}
+
+.margin-bottom-l {
+    margin-bottom: $l;
+}
+
+.margin-bottom-xl {
+    margin-bottom: $xl;
+}
+
+.margin-bottom-xxl {
+    margin-bottom: $xxl;
+}
+
+// Minus modifier ( -- )
+.margin-bottom--xxs {
+    margin-bottom: -($xxs);
+}
+
+.margin-bottom--xs {
+    margin-bottom: -($xs);
+}
+
+.margin-bottom--s {
+    margin-bottom: -($s);
+}
+
+.margin-bottom--m {
+    margin-bottom: -($m);
+}
+
+.margin-bottom--l {
+    margin-bottom: -($l);
+}
+
+.margin-bottom--xl {
+    margin-bottom: -($xl);
+}
+
+.margin-bottom--xxl {
+    margin-bottom: -($xxl);
+}

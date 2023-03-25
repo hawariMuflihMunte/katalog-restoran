@@ -1,0 +1,66 @@
+@import './variables';
+
+.margin-right-a {
+    margin-right: auto;
+}
+
+.margin-right-n {
+    margin-right: none;
+}
+
+.margin-right-xxs {
+    margin-right: $xxs;
+}
+
+.margin-right-xs {
+    margin-right: $xs;
+}
+
+.margin-right-s {
+    margin-right: $s;
+}
+
+.margin-right-m {
+    margin-right: $m;
+}
+
+.margin-right-l {
+    margin-right: $l;
+}
+
+.margin-right-xl {
+    margin-right: $xl;
+}
+
+.margin-right-xxl {
+    margin-right: $xxl;
+}
+
+// Minus modifier ( -- )
+.margin-right--xxs {
+    margin-right: -($xxs);
+}
+
+.margin-right--xs {
+    margin-right: -($xs);
+}
+
+.margin-right--s {
+    margin-right: -($s);
+}
+
+.margin-right--m {
+    margin-right: -($m);
+}
+
+.margin-right--l {
+    margin-right: -($l);
+}
+
+.margin-right--xl {
+    margin-right: -($xl);
+}
+
+.margin-right--xxl {
+    margin-right: -($xxl);
+}

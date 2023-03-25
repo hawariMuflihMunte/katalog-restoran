@@ -1,0 +1,66 @@
+@import './variables';
+
+.margin-a {
+    margin: auto;
+}
+
+.margin-n {
+    margin: none;
+}
+
+.margin-xxs {
+    margin: $xxs;
+}
+
+.margin-xs {
+    margin: $xs;
+}
+
+.margin-s {
+    margin: $s;
+}
+
+.margin-m {
+    margin: $m;
+}
+
+.margin-l {
+    margin: $l;
+}
+
+.margin-xl {
+    margin: $xl;
+}
+
+.margin-xxl {
+    margin: $xxl;
+}
+
+// Minus modifier ( -- )
+.margin--xxs {
+    margin: -($xxs);
+}
+
+.margin--xs {
+    margin: -($xs);
+}
+
+.margin--s {
+    margin: -($s);
+}
+
+.margin--m {
+    margin: -($m);
+}
+
+.margin--l {
+    margin: -($l);
+}
+
+.margin--xl {
+    margin: -($xl);
+}
+
+.margin--xxl {
+    margin: -($xxl);
+}

@@ -1,0 +1,71 @@
+/* Margin */
+
+/* Rules:
+ *
+ * Sizes:
+ *        => [empty] means all directions
+ * n      => none
+ * a      => auto
+ * xxs    => 3px
+ * xs     => 7px
+ * s      => 15px
+ * m      => 23px
+ * l      => 32px
+ * xl     => 42px
+ * xxl    => 60px
+ *
+ * # Usage:
+ * > margin-a
+ * > margin-xxl
+ *
+ * ---------------
+ *
+ * Delimiter:
+ * -    Positive
+ * --   Negative
+ *
+ * ---------------
+ *
+ * Direction:
+ * top          => top
+ * bottom       => bottom
+ * left         => left
+ * right        => right
+ * x-axis       => horizontal
+ * y-axis       => vertical
+ *
+ * # Usage:
+ * > margin-top
+ * > margin-y-axis
+ *
+ * # Note:
+ * Default sizing: xxs
+ *
+ * # Usage w sizing:
+ * > margin-bottom-xxl
+ * > margin-x-axis-m
+ *
+ *
+ */
+
+// Import styling for all directions
+@use './all';
+
+// Import styling for top direction only
+@use './top';
+
+// Import styling for bottom direction only
+@use './bottom';
+
+// Import styling for left direction only
+@use './left';
+
+// Import styling for right direction only
+@use './right';
+
+// Import styling for x-axis (horizontal) direction only
+@use './x';
+
+// Import styling for y-axis (vertical) direction only
+@use './y';
+

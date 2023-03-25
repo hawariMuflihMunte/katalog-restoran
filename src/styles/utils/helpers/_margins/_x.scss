@@ -1,0 +1,82 @@
+@import './variables';
+
+.margin-y-axis-a {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.margin-y-axis-n {
+    margin-top: none;
+    margin-bottom: none;
+}
+
+.margin-y-axis-xxs {
+    margin-top: $xxs;
+    margin-bottom: $xxs;
+}
+
+.margin-y-axis-xs {
+    margin-top: $xs;
+    margin-bottom: $xs;
+}
+
+.margin-y-axis-s {
+    margin-top: $s;
+    margin-bottom: $s;
+}
+
+.margin-y-axis-m {
+    margin-top: $m;
+    margin-bottom: $m;
+}
+
+.margin-y-axis-l {
+    margin-top: $l;
+    margin-bottom: $l;
+}
+
+.margin-y-axis-xl {
+    margin-top: $xl;
+    margin-bottom: $xl;
+}
+
+.margin-y-axis-xxl {
+    margin-top: $xxl;
+    margin-bottom: $xxl;
+}
+
+// Minus modifier ( -- )
+.margin-y-axis--xxs {
+    margin-top: -($xxs);
+    margin-bottom: -($xxs);
+}
+
+.margin-y-axis--xs {
+    margin-top: -($xs);
+    margin-bottom: -($xs);
+}
+
+.margin-y-axis--s {
+    margin-top: -($s);
+    margin-bottom: -($s);
+}
+
+.margin-y-axis--m {
+    margin-top: -($m);
+    margin-bottom: -($m);
+}
+
+.margin-y-axis--l {
+    margin-top: -($l);
+    margin-bottom: -($l);
+}
+
+.margin-y-axis--xl {
+    margin-top: -($xl);
+    margin-bottom: -($xl);
+}
+
+.margin-y-axis--xxl {
+    margin-top: -($xxl);
+    margin-bottom: -($xxl);
+}
