@@ -1,0 +1,21 @@
+.card {
+    min-width: 280px;
+    max-width: 320px;
+    position: relative;
+    border-radius: 2px;
+    background-color: white;
+
+    box-shadow: 0 2px 3px #a9a9a9;
+
+    .header {
+        .pin {
+            position: absolute;
+            background-color: white;
+            padding: 8px 15px;
+        }
+    }
+
+    .content {
+        padding: 12px;
+    }
+}
