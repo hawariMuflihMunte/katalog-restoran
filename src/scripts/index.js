@@ -11,6 +11,7 @@ async function main () {
   // } catch (err) {
   //   console.log(err)
   // }
+  console.log(DATA.restaurants)
 
   const btn = document.querySelector('.nav-drawer')
   const btnIcon = document.querySelector('.nav-drawer span')

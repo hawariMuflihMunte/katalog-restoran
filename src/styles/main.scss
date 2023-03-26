@@ -71,10 +71,7 @@ img {
         & {
             justify-content: center;
             position: relative;
-        }
-
-        .nav-brand {
-            justify-self: center;
+            gap: 32px;
         }
 
         .nav-menu {
@@ -91,7 +88,6 @@ img {
             padding: 15px 0;
 
             transform: translateX(100%);
-            // transition: 80ms linear;
             opacity: 0;
             display: none;
             border-top: 1px solid #afafaf;
@@ -113,19 +109,6 @@ img {
             opacity: 1;
             animation-name: show;
             animation-duration: 300ms;
-            animation-timing-function: linear;
-        }
-
-        @keyframes hide {
-            to {
-                opacity: 0;
-            }
-        }
-
-        .hide {
-            transform: translateX(100%);
-            animation-name: hide;
-            animation-duration: 1ms;
             animation-timing-function: linear;
         }
 
@@ -187,4 +170,9 @@ button {
     place-content: center;
     place-items: center;
 
+    padding: 4px;
+
+    span[class*="material"] {
+        font-size: 24px;
+    }
 }
