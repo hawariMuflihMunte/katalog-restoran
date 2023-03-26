@@ -51,6 +51,29 @@ $color-black: #000;
 $color-neutral: #5a5a5a;
 $color-dark: #212129;
 
+.bg-inherit {
+    background-color: inherit;
+}
+
+.text-inherit {
+    color: inherit;
+}
+
+.bg-initial {
+    background-color: initial;
+}
+
+.text-initial {
+    color: initial;
+}
+
+.bg-unset {
+    background-color: unset;
+}
+
+.text-unset {
+    color: unset;
+}
 
 .bg-transparent {
     background-color: transparent;

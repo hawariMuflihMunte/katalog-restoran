@@ -5,14 +5,9 @@ import '../styles/main.scss'
 import DATA from '../data/DATA.json'
 
 async function main () {
-  // try {
-  //   const response = await fetch(DATA)
-  //   console.log(response)
-  // } catch (err) {
-  //   console.log(err)
-  // }
   console.log(DATA.restaurants)
 
+  // Nav
   const btn = document.querySelector('.nav-drawer')
   const btnIcon = document.querySelector('.nav-drawer span')
   const navDrawer = document.querySelector('.nav-menu')
@@ -29,6 +24,9 @@ async function main () {
       clickedState = true
     }
   })
+
+  const showYear = document.getElementById('year')
+  showYear.innerHTML = `${+new Date().getFullYear()}`
 }
 
 main()
