@@ -3,10 +3,24 @@ import 'normalize.css'
 
 import '../styles/main.scss'
 import DATA from '../data/DATA.json'
+import './components/card'
 
-async function main () {
-  console.log(DATA.restaurants)
+function renderCard () {
+  // DishPlate Card
+  const cardContainer = document.getElementById('menu')
 
+  DATA.restaurants.forEach(cardData => {
+    const card = document.createElement('dishplate-card')
+    card.data = cardData
+
+    // console.log(card.data)
+
+    cardContainer.appendChild(card)
+    // console.log(card)
+  })
+}
+
+function btnNavbar () {
   // Nav
   const btn = document.querySelector('.nav-drawer')
   const btnIcon = document.querySelector('.nav-drawer span')
@@ -24,9 +38,19 @@ async function main () {
       clickedState = true
     }
   })
+}
 
+function footerShowYear () {
+  // Footer
   const showYear = document.getElementById('year')
   showYear.innerHTML = `${+new Date().getFullYear()}`
+}
+
+function main () {
+  // console.log(DATA.restaurants)
+  btnNavbar()
+  renderCard()
+  footerShowYear()
 }
 
 main()

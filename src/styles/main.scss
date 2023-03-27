@@ -59,8 +59,13 @@ img {
             width: 100%;
         }
 
-        .item a:hover {
+        .item a:hover,
+        .item a:focus {
             scale: 1.145;
+        }
+
+        .item a:focus {
+            color: red;
         }
 
         span[class*="material"] {
@@ -181,4 +186,13 @@ button {
 #menu {
     display: flex;
     flex-wrap: wrap;
+    place-content: center;
+    gap: 16px;
+}
+
+footer {
+    margin-top: 30px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
 }

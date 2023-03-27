@@ -1,22 +1,77 @@
-.card {
+@import '../mobile/mobile-breakpoints';
+
+dishplate-card {
     display: inline-flex;
     flex-direction: column;
-    min-width: 280px;
-    max-width: 320px;
+    max-height: 360px;
     position: relative;
     border-radius: 2px;
+    
     background-color: white;
     box-shadow: 0 2px 3px #a9a9a9;
+    transition: 200ms linear;
+    overflow: hidden;
+
+    a {
+        padding: 0;
+        color: #5a5a5a;
+        text-decoration: none;
+        text-overflow: ellipsis;
+    }
+
+    @media screen and (max-width: $xs) {
+        & {
+            max-width: 46% !important;
+        }
+    }
+
+    @media screen and (max-width: $s) {
+        & {
+            max-width: 46%;
+        }
+    }
+
+    @media screen and (max-width: $l) {
+        & {
+            max-width: 30%;
+        }
+    }
+
+    @media screen and (min-width: $xl) {
+        & {
+            max-width: 20%;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        opacity: 0.75;
+    }
 
     .header {
         .pin {
             position: absolute;
             background-color: white;
-            padding: 8px 15px;
+            opacity: 0.9;
+            padding: 5px 12px;
         }
     }
 
     .content {
         padding: 12px;
+        max-height: 100%;
+        text-overflow: ellipsis;
+
+        .rating {
+            margin: 0;
+            color: #888;
+        }
+
+        .description {
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: inherit;
+            text-overflow: ellipsis;
+        }
     }
 }
