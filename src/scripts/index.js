@@ -3,20 +3,28 @@ import 'normalize.css'
 
 import '../styles/main.scss'
 import DATA from '../data/DATA.json'
-import './components/card'
+// import './components/card'
+
+import Card from './card'
 
 function renderCard () {
   // DishPlate Card
   const cardContainer = document.getElementById('menu')
 
-  DATA.restaurants.forEach(cardData => {
-    const card = document.createElement('dishplate-card')
-    card.data = cardData
+  // DATA.restaurants.forEach(cardData => {
+  //   const card = document.createElement('dishplate-card')
+  //   card.data = cardData
 
-    // console.log(card.data)
+  //   // console.log(card.data)
+
+  //   cardContainer.appendChild(card)
+  //   // console.log(card)
+  // })
+
+  DATA.restaurants.forEach(data => {
+    const card = Card.createCard(data)
 
     cardContainer.appendChild(card)
-    // console.log(card)
   })
 }
 

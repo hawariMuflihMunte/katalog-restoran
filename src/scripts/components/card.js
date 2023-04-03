@@ -37,7 +37,6 @@ class DishPlateCard extends HTMLElement {
 
     this.setAttribute('role', 'listitem')
     this.setAttribute('id', `${this._data.id}`)
-    this.setAttribute('tabindex', '0')
   }
 }
 

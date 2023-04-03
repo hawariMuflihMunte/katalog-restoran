@@ -1,79 +1,114 @@
 @import '../mobile/mobile-breakpoints';
 
-dishplate-card {
+.card {
+    position: relative;
     display: inline-flex;
     flex-direction: column;
-    max-height: 360px;
-    position: relative;
-    border-radius: 2px;
-    
     background-color: white;
-    box-shadow: 0 2px 3px #a9a9a9;
-    transition: 200ms linear;
-    overflow: hidden;
+    box-shadow: 0 4px 6px 1.25px #a9a9a9;
+    
+    height: max-content;
 
-    padding: 0;
-    color: #5a5a5a;
-    text-decoration: none;
-    text-overflow: ellipsis;
+    @keyframes scaling {
+        0% {
+            scale: 1.0;
+        }
+        100% {
+            scale: 1.015;
+        }
+    }
 
     &:focus {
-        box-shadow: 0 0 4px red;
+        animation-name: scaling;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        outline: 3px solid blue;
     }
 
-    @media screen and (max-width: $xs) {
-        & {
-            max-width: 46% !important;
-        }
-    }
-
-    @media screen and (max-width: $s) {
-        & {
-            max-width: 46%;
-        }
-    }
-
-    @media screen and (max-width: $l) {
-        & {
-            max-width: 30%;
-        }
-    }
-
-    @media screen and (min-width: $xl) {
-        & {
-            max-width: 20%;
-        }
-    }
-
-    &:hover,
-    &:focus {
-        opacity: 0.75;
-    }
-
-    .header {
-        .pin {
-            position: absolute;
-            background-color: white;
-            opacity: 0.9;
-            padding: 5px 12px;
-        }
-    }
-
-    .content {
-        padding: 12px;
-        max-height: 100%;
-        text-overflow: ellipsis;
-
-        .rating {
-            margin: 0;
-            color: #888;
-        }
-
-        .description {
-            overflow: hidden;
-            white-space: nowrap;
-            max-width: inherit;
-            text-overflow: ellipsis;
-        }
+    .city {
+        position: absolute;
+        top: 0;
+        background-color: inherit;
+        padding: 6px 12px;
+        opacity: 0.9;
     }
 }
+
+// dishplate-card {
+//     display: inline-flex;
+//     flex-direction: column;
+//     max-height: 360px;
+//     position: relative;
+//     border-radius: 2px;
+    
+//     background-color: white;
+//     box-shadow: 0 2px 3px #a9a9a9;
+//     transition: 200ms linear;
+//     overflow: hidden;
+
+//     padding: 0;
+//     color: #5a5a5a;
+//     text-decoration: none;
+//     text-overflow: ellipsis;
+
+//     &:focus {
+//         box-shadow: 0 0 4px red;
+//     }
+
+//     @media screen and (max-width: $xs) {
+//         & {
+//             max-width: 46% !important;
+//         }
+//     }
+
+//     @media screen and (max-width: $s) {
+//         & {
+//             max-width: 46%;
+//         }
+//     }
+
+//     @media screen and (max-width: $l) {
+//         & {
+//             max-width: 30%;
+//         }
+//     }
+
+//     @media screen and (min-width: $xl) {
+//         & {
+//             max-width: 20%;
+//         }
+//     }
+
+//     &:hover,
+//     &:focus {
+//         opacity: 0.75;
+//     }
+
+//     .header {
+//         .pin {
+//             position: absolute;
+//             background-color: white;
+//             opacity: 0.9;
+//             padding: 5px 12px;
+//         }
+//     }
+
+//     .content {
+//         padding: 12px;
+//         max-height: 100%;
+//         text-overflow: ellipsis;
+
+//         .rating {
+//             margin: 0;
+//             color: #888;
+//         }
+
+//         .description {
+//             overflow: hidden;
+//             white-space: nowrap;
+//             max-width: inherit;
+//             text-overflow: ellipsis;
+//         }
+//     }
+// }

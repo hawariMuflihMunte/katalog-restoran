@@ -184,10 +184,31 @@ button {
 }
 
 #menu {
-    display: flex;
-    flex-wrap: wrap;
-    place-content: center;
-    gap: 16px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // place-content: center;
+    // gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+
+    @media screen and (max-width: $m) {
+        & {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    @media screen and (max-width: $s) {
+        & {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    // @media screen and (max-width: $m) {
+    //     & {
+    //         grid-template-columns: 1fr 1fr 1fr;
+    //     }
+    // }
 }
 
 footer {
