@@ -12,11 +12,13 @@ dishplate-card {
     transition: 200ms linear;
     overflow: hidden;
 
-    a {
-        padding: 0;
-        color: #5a5a5a;
-        text-decoration: none;
-        text-overflow: ellipsis;
+    padding: 0;
+    color: #5a5a5a;
+    text-decoration: none;
+    text-overflow: ellipsis;
+
+    &:focus {
+        box-shadow: 0 0 4px red;
     }
 
     @media screen and (max-width: $xs) {
