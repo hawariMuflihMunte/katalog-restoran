@@ -33,6 +33,12 @@
         padding: 6px 12px;
         opacity: 0.9;
     }
+
+    dialog {
+        z-index: 1000;
+        outline: 0;
+        border: 0;
+    }
 }
 
 // dishplate-card {

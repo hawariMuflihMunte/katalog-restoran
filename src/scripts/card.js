@@ -45,11 +45,20 @@ class Card {
     descriptionDialogElement.setAttribute('aria-modal', true)
     descriptionDialogElement.appendChild(descriptionElement)
 
+    const confirmButton = document.createElement('button')
+    confirmButton.textContent = 'OK'
+
+    confirmButton.addEventListener('click', () => {
+      descriptionDialogElement.close()
+    })
+
+    descriptionDialogElement.appendChild(confirmButton)
+
     const descriptionDialogButtonElement = document.createElement('button')
     descriptionDialogButtonElement.classList.add('details')
     descriptionDialogButtonElement.textContent = 'Details'
 
-    descriptionDialogButtonElement.addEventListener('click', (e) => {
+    descriptionDialogButtonElement.addEventListener('click', () => {
     //   descriptionDialogElement.open = true
       descriptionDialogElement.showModal()
     //   descriptionDialogElement.show()
