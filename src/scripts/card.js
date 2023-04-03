@@ -18,7 +18,7 @@ class Card {
     cardElement.classList.add('card')
     cardElement.id = id
     cardElement.setAttribute('role', 'listitem')
-    // cardElement.tabIndex = 0
+    cardElement.tabIndex = 0
 
     // Title
     const titleElement = document.createElement('h4')
@@ -49,6 +49,7 @@ class Card {
     confirmButton.textContent = 'OK'
 
     confirmButton.addEventListener('click', () => {
+      document.body.style.overflow = 'visible'
       descriptionDialogElement.close()
     })
 
@@ -57,11 +58,11 @@ class Card {
     const descriptionDialogButtonElement = document.createElement('button')
     descriptionDialogButtonElement.classList.add('details')
     descriptionDialogButtonElement.textContent = 'Details'
+    descriptionDialogButtonElement.tabIndex = -1
 
     descriptionDialogButtonElement.addEventListener('click', () => {
-    //   descriptionDialogElement.open = true
+      document.body.style.overflow = 'hidden'
       descriptionDialogElement.showModal()
-    //   descriptionDialogElement.show()
     })
 
     // Rating
