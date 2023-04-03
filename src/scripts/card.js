@@ -18,7 +18,7 @@ class Card {
     cardElement.classList.add('card')
     cardElement.id = id
     cardElement.setAttribute('role', 'listitem')
-    cardElement.tabIndex = 0
+    // cardElement.tabIndex = 0
 
     // Title
     const titleElement = document.createElement('h4')
@@ -41,6 +41,8 @@ class Card {
 
     // Description dialog button
     const descriptionDialogElement = document.createElement('dialog')
+    descriptionDialogElement.setAttribute('role', 'dialog')
+    descriptionDialogElement.setAttribute('aria-modal', true)
     descriptionDialogElement.appendChild(descriptionElement)
 
     const descriptionDialogButtonElement = document.createElement('button')
@@ -48,19 +50,25 @@ class Card {
     descriptionDialogButtonElement.textContent = 'Details'
 
     descriptionDialogButtonElement.addEventListener('click', (e) => {
-      descriptionDialogElement.open = true
+    //   descriptionDialogElement.open = true
+    //   descriptionDialogElement.showModal()
+      descriptionDialogElement.show()
     })
 
     // Rating
     const ratingElement = document.createElement('h3')
     ratingElement.textContent = `Rating ${rating}`
 
+    // Output
+    const outputElement = document.createElement('output')
+
     cardElement.append(
       imageElement,
       cityElement,
       ratingElement,
       titleElement,
-      descriptionDialogButtonElement
+      descriptionDialogButtonElement,
+      outputElement
     )
 
     return cardElement
