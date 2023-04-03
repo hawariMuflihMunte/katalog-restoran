@@ -51,8 +51,8 @@ class Card {
 
     descriptionDialogButtonElement.addEventListener('click', (e) => {
     //   descriptionDialogElement.open = true
-    //   descriptionDialogElement.showModal()
-      descriptionDialogElement.show()
+      descriptionDialogElement.showModal()
+    //   descriptionDialogElement.show()
     })
 
     // Rating
@@ -67,6 +67,7 @@ class Card {
       cityElement,
       ratingElement,
       titleElement,
+      descriptionDialogElement,
       descriptionDialogButtonElement,
       outputElement
     )
