@@ -26,7 +26,7 @@ function btnNavbar () {
   const navDrawer = document.querySelector('.nav-menu')
   let clickedState = false
 
-  btn.addEventListener('click', (event) => {
+  btn.addEventListener('click', () => {
     if (clickedState) {
       navDrawer.classList.add('show')
       btnIcon.innerHTML = 'menu_open'

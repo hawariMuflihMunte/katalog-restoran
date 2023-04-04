@@ -30,6 +30,7 @@ class CardComponent extends HTMLElement {
 
     // Title
     const titleElement = document.createElement('h4')
+    titleElement.classList.add('title')
     titleElement.textContent = name
 
     // City
@@ -45,6 +46,7 @@ class CardComponent extends HTMLElement {
 
     // Description (show in dialog)
     const descriptionElement = document.createElement('p')
+    descriptionElement.classList.add('description')
     descriptionElement.textContent = description
 
     // Description dialog button
@@ -54,14 +56,8 @@ class CardComponent extends HTMLElement {
     descriptionDialogElement.appendChild(descriptionElement)
 
     const confirmButton = document.createElement('button')
+    confirmButton.classList.add('confirm')
     confirmButton.textContent = 'OK'
-
-    confirmButton.addEventListener('click', () => {
-      document.querySelector('body').style.overflow = 'visible'
-      document.querySelector('html').style.overflow = 'visible'
-      document.querySelector('html').style.overflowX = 'hidden'
-      descriptionDialogElement.close()
-    })
 
     descriptionDialogElement.appendChild(confirmButton)
 
@@ -70,18 +66,38 @@ class CardComponent extends HTMLElement {
     descriptionDialogButtonElement.textContent = 'Details'
     descriptionDialogButtonElement.tabIndex = -1
 
-    descriptionDialogButtonElement.addEventListener('click', () => {
-      document.querySelector('body').style.overflow = 'hidden'
-      document.querySelector('html').style.overflow = 'hidden'
-      descriptionDialogElement.showModal()
-    })
-
     // Rating
     const ratingElement = document.createElement('h3')
+    ratingElement.classList.add('rating')
     ratingElement.textContent = `Rating ${rating}`
 
     // Output
     const outputElement = document.createElement('output')
+
+    descriptionDialogButtonElement.addEventListener('click', () => {
+      document.querySelector('body').style.overflow = 'hidden'
+      document.querySelector('html').style.overflow = 'hidden'
+      descriptionDialogElement.removeAttribute('open')
+      descriptionDialogElement.showModal()
+    })
+
+    confirmButton.addEventListener('click', () => {
+      document.querySelector('body').style.overflow = 'visible'
+      document.querySelector('html').style.overflow = 'visible'
+      document.querySelector('html').style.overflowX = 'hidden'
+      descriptionDialogElement.close('Confirmed')
+    })
+
+    cardElement.addEventListener('keypress', (e) => {
+      /*
+       * Debugging purposes
+       */
+      // console.log(e)
+
+      if (e.key === 'Enter') {
+        descriptionDialogButtonElement.click()
+      }
+    })
 
     cardElement.append(
       imageElement,
