@@ -50,6 +50,18 @@
     .title {
         font-size: 18px;
         color: #484848;
+        padding-top: 13px;
+        padding-bottom: 15px;
+    }
+
+    .description {
+        max-width: 75ch;
+        text-align: justify;
+        word-wrap: break-word;
+    }
+
+    .details {
+        padding: 12.8px 0;
     }
 
     dialog {
@@ -68,6 +80,7 @@
 
         .confirm {
             transform: all 200ms linear;
+            padding: 12.8px 30px;
         }
 
         .confirm:focus {

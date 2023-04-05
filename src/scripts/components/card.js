@@ -40,6 +40,7 @@ class CardComponent extends HTMLElement {
 
     // Image
     const imageElement = document.createElement('img')
+    imageElement.classList.add('image')
     imageElement.src = `${pictureId}`
     imageElement.loading = 'lazy'
     imageElement.alt = `Image of ${name}`
@@ -52,14 +53,34 @@ class CardComponent extends HTMLElement {
     // Description dialog button
     const descriptionDialogElement = document.createElement('dialog')
     descriptionDialogElement.setAttribute('role', 'dialog')
-    descriptionDialogElement.setAttribute('aria-modal', true)
-    descriptionDialogElement.appendChild(descriptionElement)
 
     const confirmButton = document.createElement('button')
     confirmButton.classList.add('confirm')
     confirmButton.textContent = 'OK'
 
-    descriptionDialogElement.appendChild(confirmButton)
+    descriptionDialogElement.setAttribute('aria-modal', true)
+
+    const descriptionContainer = document.createElement('div')
+    const descriptionContainerTitle = document.createElement('h2')
+    const descriptionContainerSubtitle = document.createElement('h4')
+    const descriptionContainerImage = document.createElement('img')
+
+    descriptionContainer.setAttribute('role', 'article')
+
+    descriptionContainerImage.src = pictureId
+    descriptionContainerImage.alt = `Image of ${pictureId}`
+    descriptionContainerImage.loading = 'lazy'
+    descriptionContainerImage.style.objectFit = 'contain'
+    descriptionContainerTitle.textContent = name
+    descriptionContainerSubtitle.textContent = `Rating ${rating}`
+
+    descriptionContainer.appendChild(descriptionContainerImage)
+    descriptionContainer.appendChild(descriptionContainerSubtitle)
+    descriptionContainer.appendChild(descriptionContainerTitle)
+    descriptionContainer.appendChild(descriptionElement)
+    descriptionContainer.appendChild(confirmButton)
+
+    descriptionDialogElement.appendChild(descriptionContainer)
 
     const descriptionDialogButtonElement = document.createElement('button')
     descriptionDialogButtonElement.classList.add('details')
@@ -73,6 +94,12 @@ class CardComponent extends HTMLElement {
 
     // Output
     const outputElement = document.createElement('output')
+
+    descriptionDialogElement.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        descriptionDialogButtonElement.click()
+      }
+    })
 
     descriptionDialogButtonElement.addEventListener('click', () => {
       document.querySelector('body').style.overflow = 'hidden'
