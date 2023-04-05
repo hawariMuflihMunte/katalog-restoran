@@ -30,10 +30,12 @@ function btnNavbar () {
     if (clickedState) {
       navDrawer.classList.add('show')
       btnIcon.innerHTML = 'menu_open'
+      btn.setAttribute('aria-expanded', true)
       clickedState = false
     } else {
       navDrawer.classList.remove('show')
       btnIcon.innerHTML = 'menu'
+      btn.setAttribute('aria-expanded', false)
       clickedState = true
     }
   })

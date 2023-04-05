@@ -59,6 +59,8 @@ img {
             gap: 4px;
             transition: 200ms linear;
             width: 100%;
+
+            padding: 9px;
         }
 
         .item a:hover,
@@ -134,6 +136,10 @@ img {
 
         .nav-menu .item:not(:first-child) {
             margin-top: 6px !important;
+        }
+
+        .nav-drawer {
+            padding: 10px;
         }
     }
 }

@@ -27,16 +27,16 @@
     <nav class="nav-bar" role="navigation">
       <a href="./" class="nav-brand text-neutral" aria-label="Brand link">
         <img src="./images/logos/favicon-32x32.png" alt="Fork & Knife with Plate" loading="lazy">
-        DishPlate
+        <span role="contentinfo">DishPlate</span>
       </a>
-      <button class="nav-drawer display-none-m display-none-l display-none-xl display-flex-s bg-transparent" aria-label="Navigation button for drawer menu">
+      <button class="nav-drawer display-none-m display-none-l display-none-xl display-flex-s bg-transparent " aria-label="Navigation button for drawer menu" aria-expanded="false">
         <span class="material-symbols-sharp">
           menu
         </span>
       </button>
       <ul class="nav-menu bg-white" aria-label="Navigation menu">
         <li class="item" aria-label="Navigation menu anchor">
-          <a href="#" class="text-neutral">
+          <a href="./" class="text-neutral">
             Home
             <span class="material-symbols-sharp" aria-hidden="true">
               home
@@ -72,7 +72,7 @@
     </section>
   </main>
   <footer aria-label="footer" tabindex="0">
-    <p>DishPlate © <span id="year"></span></p>
+    <p role="complementary">DishPlate © <span id="year"></span></p>
   </footer>
 </body>
 </html>
