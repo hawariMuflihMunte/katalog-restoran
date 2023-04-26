@@ -190,7 +190,7 @@ button {
     }
 }
 
-#menu {
+#list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 18px;
@@ -214,4 +214,8 @@ footer {
     width: 100%;
     padding: 20px;
     text-align: center;
+}
+
+footer p {
+    max-width: 100%;
 }
