@@ -9,7 +9,7 @@ const ShowCurrentYear = {
     }
   },
   show () {
-    document.getElementById(`${this._container}`).innerHTML = `${+new Date().getFullYear()}`
+    document.getElementById(this._container).innerHTML = `${+new Date().getFullYear()}`
   }
 }
 
