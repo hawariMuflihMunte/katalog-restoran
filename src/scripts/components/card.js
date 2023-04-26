@@ -72,7 +72,7 @@ class CardComponent extends HTMLElement {
     descriptionContainerImage.loading = 'lazy'
     descriptionContainerImage.style.objectFit = 'contain'
     descriptionContainerTitle.textContent = name
-    descriptionContainerSubtitle.textContent = `Rating ${rating}`
+    descriptionContainerSubtitle.textContent = `🌟 ${rating}`
 
     descriptionContainer.appendChild(descriptionContainerImage)
     descriptionContainer.appendChild(descriptionContainerSubtitle)
@@ -90,7 +90,7 @@ class CardComponent extends HTMLElement {
     // Rating
     const ratingElement = document.createElement('h3')
     ratingElement.classList.add('rating')
-    ratingElement.textContent = `Rating ${rating}`
+    ratingElement.textContent = `🌟 ${rating}`
 
     // Output
     const outputElement = document.createElement('output')
