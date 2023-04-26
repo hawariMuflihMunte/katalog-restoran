@@ -7,6 +7,8 @@ const Drawer = {
     this._button = button
     this._buttonIcon = buttonIcon
     this._drawer = drawer
+
+    return this
   },
   render () {
     let clickedState = false
