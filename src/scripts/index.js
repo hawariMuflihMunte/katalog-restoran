@@ -59,5 +59,10 @@ const app = new App({
     button: document.querySelector('.nav-drawer'),
     buttonIcon: document.querySelector('.nav-drawer span'),
     drawerContent: document.querySelector('.nav-menu')
-  }
+  },
+  content: document.getElementById('menu')
+})
+
+window.addEventListener('hashchange', () => {
+  app.render()
 })
