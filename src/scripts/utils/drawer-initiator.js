@@ -8,7 +8,7 @@ const Drawer = {
     this._buttonIcon = buttonIcon
     this._drawer = drawer
   },
-  start () {
+  render () {
     let clickedState = false
 
     this._button.addEventListener('click', () => {
