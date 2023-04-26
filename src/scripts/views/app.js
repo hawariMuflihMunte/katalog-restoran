@@ -22,8 +22,7 @@ class App {
       button: this._drawerButton,
       buttonIcon: this._drawerButtonIcon,
       drawer: this._drawerDrawerContent
-    })
-    Drawer.render()
+    }).render()
   }
 }
 
