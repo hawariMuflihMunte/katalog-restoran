@@ -1,6 +1,7 @@
 import Drawer from "../utils/drawer-initiator"
 import UrlParser from "../routes/url-parser"
 import routes from "../routes/routes"
+import ShowCurrentYear from "../utils/show-current-year"
 
 class App {
   constructor ({
@@ -9,12 +10,14 @@ class App {
       buttonIcon,
       drawerContent
     },
-    content
+    content,
+    footerYearContainerId
   }) {
     this._drawerButton = button
     this._drawerButtonIcon = buttonIcon
     this._drawerDrawerContent = drawerContent
     this._content = content
+    this._footerYearContainerId = footerYearContainerId
 
     this._initAppShell()
   }
@@ -25,6 +28,10 @@ class App {
       buttonIcon: this._drawerButtonIcon,
       drawer: this._drawerDrawerContent
     }).render()
+
+    ShowCurrentYear.init({
+      containerId: this._footerYearContainerId
+    }).show()
   }
 
   async render () {
