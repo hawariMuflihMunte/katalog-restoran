@@ -3,7 +3,7 @@ import Favorite from '../views/pages/favorite'
 
 const routes = {
   '/': NowShowing,
-  '/no-showing': NowShowing,
+  '/now-showing': NowShowing,
   '/favorite': Favorite
 }
 
