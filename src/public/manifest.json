@@ -63,5 +63,6 @@
   "theme_color": "#fafafa",
   "background_color": "#fcfcfc",
   "display": "standalone",
+  "start_url": ".",
   "lang": "id"
 }
