@@ -60,7 +60,8 @@ const app = new App({
     buttonIcon: document.querySelector('.nav-drawer span'),
     drawerContent: document.querySelector('.nav-menu')
   },
-  content: document.getElementById('menu')
+  content: document.getElementById('menu'),
+  footerYearContainerId: document.querySelector('#year')
 })
 
 window.addEventListener('hashchange', () => {
