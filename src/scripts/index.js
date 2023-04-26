@@ -3,12 +3,10 @@ import 'normalize.css'
 
 import '../styles/main.scss'
 import DATA from '../data/DATA.json'
-// import './components/card'
 
 import './components/card'
 
 function renderCard () {
-  // DishPlate Card
   const cardContainer = document.getElementById('menu')
 
   DATA.restaurants.forEach(data => {
@@ -20,7 +18,6 @@ function renderCard () {
 }
 
 function btnNavbar () {
-  // Nav
   const btn = document.querySelector('.nav-drawer')
   const btnIcon = document.querySelector('.nav-drawer span')
   const navDrawer = document.querySelector('.nav-menu')
@@ -42,13 +39,11 @@ function btnNavbar () {
 }
 
 function footerShowYear () {
-  // Footer
   const showYear = document.getElementById('year')
   showYear.innerHTML = `${+new Date().getFullYear()}`
 }
 
 function main () {
-  // console.log(DATA.restaurants)
   btnNavbar()
   renderCard()
   footerShowYear()
