@@ -1,5 +1,5 @@
 const CONFIG = {
-  CACHE_NAME: 'MovieCatalogue-V1'
+  CACHE_NAME: 'KatalogRestoran-V1'
 }
 
 export default CONFIG
