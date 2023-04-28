@@ -1,7 +1,7 @@
-import Drawer from "../utils/drawer-initiator"
-import UrlParser from "../routes/url-parser"
-import routes from "../routes/routes"
-import ShowCurrentYear from "../utils/show-current-year"
+import Drawer from '../utils/drawer-initiator'
+import UrlParser from '../routes/url-parser'
+import routes from '../routes/routes'
+import ShowCurrentYear from '../utils/show-current-year'
 
 class App {
   constructor ({
