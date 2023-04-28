@@ -49,11 +49,9 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
-    "whatwg-fetch": "^3.6.2",
-    "workbox-webpack-plugin": "^6.5.4"
+    "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
-    "regenerator-runtime": "^0.13.9",
-    "workbox-window": "^6.5.4"
+    "regenerator-runtime": "^0.13.9"
   }
 }
