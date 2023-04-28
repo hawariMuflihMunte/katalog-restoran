@@ -3,6 +3,7 @@ import 'normalize.css'
 
 import '../styles/main.scss'
 import App from './views/app'
+import swRegister from './utils/sw-register'
 
 const app = new App({
   drawer: {
@@ -16,6 +17,7 @@ const app = new App({
 
 window.addEventListener('load', () => {
   app.render()
+  swRegister()
 })
 
 window.addEventListener('hashchange', () => {
