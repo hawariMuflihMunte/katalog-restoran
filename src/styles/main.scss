@@ -7,10 +7,17 @@
 
 @import './mobile/mobile';
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html,
 body {
     background-color: azure;
     overflow-x: hidden;
+    width: 100%;
 }
 
 img {
