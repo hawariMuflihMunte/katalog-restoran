@@ -6,9 +6,7 @@ const ApiEndpoint = {
       const result = await fetch(`${CONFIG.BASE_API_URL}/list`)
       const data = await result.json()
 
-      console.log(data)
-
-      return data
+      return data // send raw response data
     } catch (error) {
       console.error(error)
       return false
@@ -19,8 +17,6 @@ const ApiEndpoint = {
     try {
       const result = await fetch(`${CONFIG.BASE_API_URL}/detail/${id}`)
       const data = await result.json()
-
-      console.log(data)
 
       return data
     } catch (error) {
@@ -79,8 +75,6 @@ const ApiEndpoint = {
     try {
       const result = await fetch(`${CONFIG.BASE_API_URL}/images/${size}/${id}`)
       const data = await result.json()
-
-      console.log(data)
 
       return data
     } catch (error) {
