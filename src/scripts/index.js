@@ -11,7 +11,7 @@ const app = new App({
     buttonIcon: document.querySelector('.nav-drawer span'),
     drawerContent: document.querySelector('.nav-menu')
   },
-  content: document.getElementById('content'),
+  content: document.querySelector('main'),
   footerYearContainerId: document.querySelector('#year')
 })
 
