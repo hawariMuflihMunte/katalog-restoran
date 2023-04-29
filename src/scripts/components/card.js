@@ -1,6 +1,9 @@
+import CONFIG from '../global/config'
+
 const Card = {
   init (data) {
     this._data = data
+    this._BASE_API_IMAGE_URL = CONFIG.BASE_API_IMAGE_URL
 
     return this
   },
@@ -13,7 +16,7 @@ const Card = {
     const image = document.createElement('img')
     image.classList.add('card-img')
     image.loading = 'lazy'
-    image.src = this._data.pictureId
+    image.src = `${this._BASE_API_IMAGE_URL}${this._data.pictureId}`
     image.alt = `Picture of ${this._data.name}`
     content.append(image)
 
