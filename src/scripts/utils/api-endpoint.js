@@ -1,13 +1,9 @@
-const ApiEndpoint = {
-  init ({
-    BASE_API_URL
-  }) {
-    this._BASE_API_URL = BASE_API_URL
-  },
+import CONFIG from '../global/config'
 
+const ApiEndpoint = {
   async getList () {
     try {
-      const result = await fetch(`${this._BASE_API_URL}/list`)
+      const result = await fetch(`${CONFIG.BASE_API_URL}/list`)
       const data = result.json()
 
       console.log(data)
@@ -21,7 +17,7 @@ const ApiEndpoint = {
 
   async getDetail (id) {
     try {
-      const result = await fetch(`${this._BASE_API_URL}/detail/${id}`)
+      const result = await fetch(`${CONFIG.BASE_API_URL}/detail/${id}`)
       const data = result.json()
 
       console.log(data)
@@ -35,7 +31,7 @@ const ApiEndpoint = {
 
   async searchData (query) {
     try {
-      const result = await fetch(`${this._BASE_API_URL}/search?q=${query}`)
+      const result = await fetch(`${CONFIG.BASE_API_URL}/search?q=${query}`)
       const data = result.json()
 
       console.log(data)
@@ -57,7 +53,7 @@ const ApiEndpoint = {
     this._review = review
 
     try {
-      const result = await fetch(`${this._BASE_API_URL}/review`, {
+      const result = await fetch(`${CONFIG.BASE_API_URL}/review`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -81,7 +77,7 @@ const ApiEndpoint = {
 
   async getImage (id, size = 'medium') {
     try {
-      const result = await fetch(`${this._BASE_API_URL}/images/${size}/${id}`)
+      const result = await fetch(`${CONFIG.BASE_API_URL}/images/${size}/${id}`)
       const data = result.json()
 
       console.log(data)
