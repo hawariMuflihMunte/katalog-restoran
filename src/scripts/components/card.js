@@ -31,7 +31,7 @@ const Card_ = {
     const title = document.createElement('h3')
     title.classList.add('card-title')
     const link = document.createElement('a')
-    link.href = `/#/details/${this._data.id}`
+    link.href = `/#/detail/${this._data.id}`
     link.textContent = this._data.name
     title.title = `${this._data.name}. Click to view details`
     title.appendChild(link)
