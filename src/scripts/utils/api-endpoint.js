@@ -4,7 +4,7 @@ const ApiEndpoint = {
   async getList () {
     try {
       const result = await fetch(`${CONFIG.BASE_API_URL}/list`)
-      const data = result.json()
+      const data = await result.json()
 
       console.log(data)
 
@@ -18,7 +18,7 @@ const ApiEndpoint = {
   async getDetail (id) {
     try {
       const result = await fetch(`${CONFIG.BASE_API_URL}/detail/${id}`)
-      const data = result.json()
+      const data = await result.json()
 
       console.log(data)
 
@@ -32,7 +32,7 @@ const ApiEndpoint = {
   async searchData (query) {
     try {
       const result = await fetch(`${CONFIG.BASE_API_URL}/search?q=${query}`)
-      const data = result.json()
+      const data = await result.json()
 
       console.log(data)
 
@@ -64,7 +64,7 @@ const ApiEndpoint = {
           review: this._review
         })
       })
-      const data = result.json()
+      const data = await result.json()
 
       console.log(data)
 
@@ -78,7 +78,7 @@ const ApiEndpoint = {
   async getImage (id, size = 'medium') {
     try {
       const result = await fetch(`${CONFIG.BASE_API_URL}/images/${size}/${id}`)
-      const data = result.json()
+      const data = await result.json()
 
       console.log(data)
 
