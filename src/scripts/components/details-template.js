@@ -92,6 +92,16 @@ const DetailsTemplate = {
     return tabularContainer
   },
 
+  _descriptions ({
+    descriptions
+  }) {
+    const descriptionsContainer = document.createElement('p')
+    descriptionsContainer.classList.add('details-descriptions')
+    descriptionsContainer.textContent = descriptions
+
+    return descriptionsContainer
+  },
+
   _menuList ({
     menus
   }) {
@@ -156,6 +166,9 @@ const DetailsTemplate = {
       categories: this._categories
     })
     container.appendChild(information)
+
+    const descriptions = this._descriptions({ descriptions: this._description })
+    container.appendChild(descriptions)
 
     const menus = this._menuList({ menus: this._menus })
     container.appendChild(menus)
