@@ -3,6 +3,7 @@
 @use './utils/colors';
 @use './utils/helpers';
 @use './utils/card';
+@use './utils/details';
 
 @import './mobile/mobile';
 
@@ -211,6 +212,16 @@ button {
             gap: 12px;
         }
     }
+}
+
+#details-container {
+    width: 100%;
+}
+
+a.home-button {
+    cursor: pointer;
+    display: block;
+    padding: 22px;
 }
 
 footer {
