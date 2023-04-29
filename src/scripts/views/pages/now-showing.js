@@ -25,7 +25,6 @@ const NowShowing = {
   async afterRender () {
     try {
       const data = await ApiEndpoint.getList()
-      console.log(data.restaurants)
 
       data.restaurants.forEach(data => {
         const card = Card.init(data).render()
