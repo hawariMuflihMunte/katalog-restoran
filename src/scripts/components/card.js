@@ -1,4 +1,4 @@
-const Card_ = {
+const Card = {
   init (data) {
     this._data = data
 
@@ -46,4 +46,4 @@ const Card_ = {
   }
 }
 
-export default Card_
+export default Card
