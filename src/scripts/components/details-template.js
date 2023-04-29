@@ -1,4 +1,5 @@
 import CONFIG from '../global/config'
+import './review-box' // <review-box>
 
 CONFIG.BASE_API_IMAGE_URL = 'https://restaurant-api.dicoding.dev/images/large/'
 
@@ -111,7 +112,7 @@ const DetailsTemplate = {
     details.id = menusStatus
 
     const summary = document.createElement('summary')
-    summary.textContent = menusStatus.charAt(0).toUpperCase() + menusStatus.slice(1)
+    summary.textContent = menusStatus.charAt(0).toUpperCase() + menusStatus.slice(1) + 's'
     details.appendChild(summary)
 
     const lists = document.createElement('ol')
@@ -128,6 +129,15 @@ const DetailsTemplate = {
     details.appendChild(lists)
 
     return details
+  },
+
+  _reviews ({
+    customerReviews
+  }) {
+    const reviewBox = document.createElement('review-box')
+    reviewBox.setData = customerReviews
+
+    return reviewBox
   },
 
   render () {
@@ -167,6 +177,21 @@ const DetailsTemplate = {
 
     const hr = document.createElement('hr')
     container.appendChild(hr)
+
+    const customerFeedbackBox = document.createElement('div')
+    customerFeedbackBox.classList.add('customer-feedback-box')
+
+    const customerFeedbackBoxTitle = document.createElement('h3')
+    customerFeedbackBoxTitle.textContent = 'User Reviews'
+
+    customerFeedbackBox.appendChild(customerFeedbackBoxTitle)
+
+    this._customerReviews.forEach(review => {
+      const reviewContainer = this._reviews({ customerReviews: review })
+
+      customerFeedbackBox.appendChild(reviewContainer)
+    })
+    container.appendChild(customerFeedbackBox)
 
     return container
   }

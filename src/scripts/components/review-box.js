@@ -1,32 +1,25 @@
 /* eslint-disable accessor-pairs */
 class ReviewBox extends HTMLElement {
-  get getData () {
-    return this._data
-  }
-
-  set setData ({ data }) {
+  set setData (data) {
     this._data = data
-
-    /**
-     * Datas that are required to be rendered:
-     * 'name',
-     * 'review',
-     * 'date'
-     */
   }
 
   connectedCallback () {
-    this.render(this.getData)
+    this.render()
   }
 
-  render ({
-    data
-  }) {
+  render () {
+    const {
+      name,
+      date,
+      review
+    } = this._data
+
     this.innerHTML = `
-      <div>
-        <h5>${data.name}</h5>
-        <p>${data.date}</p>
-        <p>${data.review}</p>
+      <div class="feedback-box">
+        <h5 class="name">${name}</h5>
+        <p class="date">${date}</p>
+        <p class="review">${review}</p>
       </div>
     `
   }
