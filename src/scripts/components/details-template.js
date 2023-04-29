@@ -53,34 +53,43 @@ const DetailsTemplate = {
 
   _information ({
     address,
-    city,
-    categories = []
+    city
   }) {
-    const informationContainer = document.createElement('div')
+    const tabularContainer = document.createElement('table')
+    const tabularHeader = document.createElement('thead')
+    const tabularBody = document.createElement('tbody')
 
-    const informationCaption = document.createElement('h3')
-    informationCaption.classList.add('details-information-caption')
-    informationCaption.textContent = 'Information'
-    informationContainer.appendChild(informationCaption)
+    const headerRow = document.createElement('tr')
+    const header = document.createElement('th')
+    header.textContent = 'Information'
+    headerRow.appendChild(header)
 
-    const informationAddress = document.createElement('p')
-    informationAddress.classList.add('details-information-address')
-    informationAddress.textContent = `${address}, ${city}`
-    informationContainer.appendChild(informationAddress)
+    tabularHeader.appendChild(headerRow)
+    tabularContainer.appendChild(tabularHeader)
 
-    const informationCategories = document.createElement('ul')
-    informationCategories.classList.add('details-information-categories')
+    const bodyRow1 = document.createElement('tr')
+    const data1 = document.createElement('td')
+    data1.textContent = 'Address'
+    bodyRow1.appendChild(data1)
 
-    categories.forEach(category => {
-      const list = document.createElement('li')
-      list.textContent = category.name
+    const data2 = document.createElement('td')
+    data2.textContent = address
+    bodyRow1.appendChild(data2)
+    tabularBody.appendChild(bodyRow1)
 
-      informationCategories.appendChild(list)
-    })
+    const bodyRow2 = document.createElement('tr')
+    const data3 = document.createElement('td')
+    data3.textContent = 'City'
+    bodyRow2.appendChild(data3)
 
-    informationContainer.appendChild(informationCategories)
+    const data4 = document.createElement('td')
+    data4.textContent = city
+    bodyRow2.appendChild(data4)
+    tabularBody.appendChild(bodyRow2)
 
-    return informationContainer
+    tabularContainer.appendChild(tabularBody)
+
+    return tabularContainer
   },
 
   _menuList ({
