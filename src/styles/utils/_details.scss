@@ -1,0 +1,17 @@
+@import '../mobile/mobile-breakpoints';
+
+.details {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  min-height: max-content;
+  overflow: hidden;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35);
+  background-color: whitesmoke;
+
+  display: flex;
+  flex-direction: column;
+  padding: 4.5px 9.5px;
+}
+
+.details-image {
+  width: 100%;
+}

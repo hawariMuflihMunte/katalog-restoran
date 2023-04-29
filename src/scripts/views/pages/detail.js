@@ -1,16 +1,14 @@
 import ApiEndpoint from '../../utils/api-endpoint'
-import Card from '../../components/card'
+import DetailsTemplate from '../../components/details-template'
 import UrlParser from '../../routes/url-parser'
 
 const Detail = {
   async render () {
     return `
       <section id="content" class="container">
-        <h1>DishPlate</h1>
+        <a href="/#/" class="home-button">⬅ Back</a>
         <br>
-        <h2>Detail</h2>
-        <hr>
-        <section id="list" role="list">
+        <section id="details-container" role="list">
           <!-- JS async render -->
         </section>
       </section>
@@ -25,8 +23,8 @@ const Detail = {
       const data = await ApiEndpoint.getDetail(getId)
       console.log(data.restaurant)
 
-      const card = Card.init(data.restaurant).render()
-      document.getElementById('list').appendChild(card)
+      const details = DetailsTemplate.init(data.restaurant).render()
+      document.getElementById('details-container').appendChild(details)
     } catch (error) {
       console.log(error)
     }
