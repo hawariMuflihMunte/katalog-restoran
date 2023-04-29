@@ -1,94 +1,69 @@
-@import '../mobile/mobile-breakpoints';
-
 .card {
-    position: relative;
-    display: inline-flex;
-    flex-direction: column;
-    background-color: white;
-    box-shadow: 0 4px 6px 1.25px #a9a9a9;
-    
-    min-height: max-content;
-    padding: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  border-radius: 0;
 
-    @keyframes scaling {
-        0% {
-            scale: 1.0;
-        }
-        100% {
-            scale: 1.015;
-        }
-    }
+  overflow: hidden;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35);
+  background-color: whitesmoke;
 
-    &:focus {
-        animation-name: scaling;
-        animation-duration: 0.75s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-        outline: 3px solid blue;
-    }
+  &:hover,
+  &:focus {
+    transform: translateY(2px);
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.25);
+  }
+}
 
-    .city {
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        background-color: inherit;
-        padding: 6px 12px;
-        opacity: 0.9;
-    }
+.card-city {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(245, 245, 245, 0.95);
+  z-index: 100;
 
-    .rating,
-    .title {
-        margin: 0;
-        padding: 3px 0;
-    }
+  padding: 5px 15px;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
 
-    .rating {
-        font-size: 14px;
-        color: #686868;
-    }
+.card-rating {
+  display: inline-block;
+  text-align: center;
+  padding: 5px 0;
+  border-bottom: 2px solid;
+  background-color: bisque;
 
-    .title {
-        font-size: 18px;
-        color: #484848;
-        padding-top: 13px;
-        padding-bottom: 15px;
-    }
+  font-weight: 700;
+}
 
-    .description {
-        max-width: 75ch;
-        text-align: justify;
-        word-wrap: break-word;
-    }
+.card-title {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: large;
+  display: flex;
+  align-items: center;
 
-    .details {
-        padding: 12.8px 0;
-    }
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 0;
 
-    dialog {
-        z-index: 1000;
-        outline: 0;
-        border: 0;
+  a {
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 44px;
+    padding: 0;
+    display: flex;
+  
+    align-items: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.75);
+  }
+}
 
-        @keyframes dotting {
-            0% {
-                outline: 2px dotted blue;
-            }
-            100% {
-                outline: 5px dotted blue;
-            }
-        }
-
-        .confirm {
-            transform: all 200ms linear;
-            padding: 14px 30px;
-        }
-
-        .confirm:focus {
-            animation-name: dotting;
-            animation-duration: 1s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
-        }
-    }
+.card-description {
+  padding: 0 20px 0 20px;
 }
