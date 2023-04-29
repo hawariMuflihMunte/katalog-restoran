@@ -4,6 +4,7 @@ const Card_ = {
 
     return this
   },
+
   render () {
     const content = document.createElement('div')
     content.classList.add('card')
