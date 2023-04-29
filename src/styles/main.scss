@@ -187,6 +187,11 @@ summary {
     color: rgba(0, 0, 0, 0.72);
 }
 
+details,
+summary {
+    cursor: pointer;
+}
+
 button {
     cursor: pointer;
     border: 0;
