@@ -103,47 +103,31 @@ const DetailsTemplate = {
   },
 
   _menuList ({
-    menus
+    menus,
+    menusStatus = 'food'
   }) {
-    const menuDetails = document.createElement('details')
-    menuDetails.classList.add('details-menu')
-    const menuDetailsSummary = document.createElement('summary')
-    menuDetailsSummary.textContent = 'Menu'
-    menuDetails.appendChild(menuDetailsSummary)
+    const details = document.createElement('details')
+    details.classList.add('details-menu')
+    details.id = menusStatus
 
-    const menuDetailsFoodTitle = document.createElement('h4')
-    menuDetailsFoodTitle.textContent = 'Foods'
-    menuDetails.appendChild(menuDetailsFoodTitle)
+    const summary = document.createElement('summary')
+    summary.textContent = menusStatus.charAt(0).toUpperCase() + menusStatus.slice(1)
+    details.appendChild(summary)
 
-    const menuDetailsFoodLists = document.createElement('ol')
+    const lists = document.createElement('ol')
 
-    menus.foods.forEach(food => {
+    menusStatus += 's'
+
+    menus[menusStatus].forEach(menu => {
       const list = document.createElement('li')
-      list.textContent = food.name
+      list.textContent = menu.name
 
-      menuDetailsFoodLists.appendChild(list)
+      lists.appendChild(list)
     })
 
-    menuDetails.appendChild(menuDetailsFoodLists)
+    details.appendChild(lists)
 
-    const menuDetailsDrinkTitle = menuDetailsFoodTitle.cloneNode(true)
-    menuDetailsDrinkTitle.innerHTML = ''
-    menuDetailsDrinkTitle.textContent = 'Drinks'
-    menuDetails.appendChild(menuDetailsDrinkTitle)
-
-    const menuDetailsDrinkLists = menuDetailsFoodLists.cloneNode(true)
-    menuDetailsDrinkLists.innerHTML = ''
-
-    menus.drinks.forEach(drink => {
-      const list = document.createElement('li')
-      list.textContent = drink.name
-
-      menuDetailsDrinkLists.appendChild(list)
-    })
-
-    menuDetails.appendChild(menuDetailsDrinkLists)
-
-    return menuDetails
+    return details
   },
 
   render () {
@@ -170,8 +154,19 @@ const DetailsTemplate = {
     const descriptions = this._descriptions({ descriptions: this._description })
     container.appendChild(descriptions)
 
-    const menus = this._menuList({ menus: this._menus })
-    container.appendChild(menus)
+    const foodMenu = this._menuList({
+      menus: this._menus
+    })
+    container.appendChild(foodMenu)
+
+    const drinkMenu = this._menuList({
+      menus: this._menus,
+      menusStatus: 'drink'
+    })
+    container.appendChild(drinkMenu)
+
+    const hr = document.createElement('hr')
+    container.appendChild(hr)
 
     return container
   }
