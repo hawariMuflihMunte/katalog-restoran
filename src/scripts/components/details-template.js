@@ -164,8 +164,16 @@ const DetailsTemplate = {
     })
     container.appendChild(information)
 
+    const descriptionsTitle = document.createElement('h2')
+    descriptionsTitle.textContent = 'Descriptions'
+    container.appendChild(descriptionsTitle)
+
     const descriptions = this._descriptions({ descriptions: this._description })
     container.appendChild(descriptions)
+
+    const menuTitle = document.createElement('h2')
+    menuTitle.textContent = 'Menu'
+    container.appendChild(menuTitle)
 
     const foodMenu = this._menuList({
       menus: this._menus
@@ -181,7 +189,7 @@ const DetailsTemplate = {
     const hr = document.createElement('hr')
     container.appendChild(hr)
 
-    const customerFeedbackBoxTitle = document.createElement('h3')
+    const customerFeedbackBoxTitle = document.createElement('h2')
     customerFeedbackBoxTitle.textContent = 'User Reviews'
     container.appendChild(customerFeedbackBoxTitle)
 
