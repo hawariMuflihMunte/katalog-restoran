@@ -277,6 +277,11 @@ a.home-button {
     cursor: pointer;
     display: block;
     padding: 22px;
+    background-color: white;
+    width: max-content;
+
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35);
+    margin-top: 10px;
 }
 
 footer {
