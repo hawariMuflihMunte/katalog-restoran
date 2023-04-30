@@ -1,148 +1,52 @@
-class CardComponent extends HTMLElement {
-  get data () {
-    return this._data
-  }
+import CONFIG from '../global/config'
 
-  set data (data) {
+const Card = {
+  init (data) {
     this._data = data
-  }
+    this._BASE_API_IMAGE_URL = CONFIG.BASE_API_IMAGE_URL
 
-  connectedCallback () {
-    this.render()
-  }
-
-  createCard (obj) {
-    const {
-      id,
-      name,
-      description,
-      pictureId,
-      city,
-      rating
-    } = obj
-
-    // Main wrapper
-    const cardElement = document.createElement('div')
-    cardElement.classList.add('card')
-    cardElement.id = id
-    cardElement.setAttribute('role', 'listitem')
-    cardElement.tabIndex = 0
-
-    // Title
-    const titleElement = document.createElement('h4')
-    titleElement.classList.add('title')
-    titleElement.textContent = name
-
-    // City
-    const cityElement = document.createElement('span')
-    cityElement.classList.add('city')
-    cityElement.textContent = city
-
-    // Image
-    const imageElement = document.createElement('img')
-    imageElement.classList.add('image')
-    imageElement.src = `${pictureId}`
-    imageElement.loading = 'lazy'
-    imageElement.alt = `Image of ${name}`
-
-    // Description (show in dialog)
-    const descriptionElement = document.createElement('p')
-    descriptionElement.classList.add('description')
-    descriptionElement.textContent = description
-
-    // Description dialog button
-    const descriptionDialogElement = document.createElement('dialog')
-    descriptionDialogElement.setAttribute('role', 'dialog')
-
-    const confirmButton = document.createElement('button')
-    confirmButton.classList.add('confirm')
-    confirmButton.textContent = 'OK'
-
-    descriptionDialogElement.setAttribute('aria-modal', true)
-
-    const descriptionContainer = document.createElement('div')
-    const descriptionContainerTitle = document.createElement('h2')
-    const descriptionContainerSubtitle = document.createElement('h4')
-    const descriptionContainerImage = document.createElement('img')
-
-    descriptionContainer.setAttribute('role', 'article')
-
-    descriptionContainerImage.src = pictureId
-    descriptionContainerImage.alt = `Image of ${pictureId}`
-    descriptionContainerImage.loading = 'lazy'
-    descriptionContainerImage.style.objectFit = 'contain'
-    descriptionContainerTitle.textContent = name
-    descriptionContainerSubtitle.textContent = `🌟 ${rating}`
-
-    descriptionContainer.appendChild(descriptionContainerImage)
-    descriptionContainer.appendChild(descriptionContainerSubtitle)
-    descriptionContainer.appendChild(descriptionContainerTitle)
-    descriptionContainer.appendChild(descriptionElement)
-    descriptionContainer.appendChild(confirmButton)
-
-    descriptionDialogElement.appendChild(descriptionContainer)
-
-    const descriptionDialogButtonElement = document.createElement('button')
-    descriptionDialogButtonElement.classList.add('details')
-    descriptionDialogButtonElement.textContent = 'Details'
-    descriptionDialogButtonElement.tabIndex = -1
-
-    // Rating
-    const ratingElement = document.createElement('h3')
-    ratingElement.classList.add('rating')
-    ratingElement.textContent = `🌟 ${rating}`
-
-    // Output
-    const outputElement = document.createElement('output')
-
-    descriptionDialogElement.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        descriptionDialogButtonElement.click()
-      }
-    })
-
-    descriptionDialogButtonElement.addEventListener('click', () => {
-      document.querySelector('body').style.overflow = 'hidden'
-      document.querySelector('html').style.overflow = 'hidden'
-      descriptionDialogElement.removeAttribute('open')
-      descriptionDialogElement.showModal()
-    })
-
-    confirmButton.addEventListener('click', () => {
-      document.querySelector('body').style.overflow = 'visible'
-      document.querySelector('html').style.overflow = 'visible'
-      document.querySelector('html').style.overflowX = 'hidden'
-      descriptionDialogElement.close('Confirmed')
-    })
-
-    cardElement.addEventListener('keypress', (e) => {
-      /*
-       * Debugging purposes
-       */
-      // console.log(e)
-
-      if (e.key === 'Enter') {
-        descriptionDialogButtonElement.click()
-      }
-    })
-
-    cardElement.append(
-      imageElement,
-      cityElement,
-      ratingElement,
-      titleElement,
-      descriptionDialogElement,
-      descriptionDialogButtonElement,
-      outputElement
-    )
-
-    return cardElement
-  }
+    return this
+  },
 
   render () {
-    this.content = this.createCard(this.data)
-    this.appendChild(this.content)
+    const content = document.createElement('div')
+    content.classList.add('card')
+    content.setAttribute('role', 'listitem')
+
+    const image = document.createElement('img')
+    image.classList.add('card-img')
+    image.loading = 'lazy'
+    image.src = `${this._BASE_API_IMAGE_URL}${this._data.pictureId}`
+    image.alt = `Picture of ${this._data.name}`
+    content.append(image)
+
+    const city = document.createElement('span')
+    city.classList.add('card-city')
+    city.textContent = this._data.city
+    city.title = this._data.city
+    content.appendChild(city)
+
+    const rating = document.createElement('div')
+    rating.classList.add('card-rating')
+    rating.textContent = `⭐ ${this._data.rating}`
+    rating.title = `Rating ${this._data.rating}`
+    content.appendChild(rating)
+
+    const title = document.createElement('h3')
+    title.classList.add('card-title')
+    const link = document.createElement('a')
+    link.href = `/#/detail/${this._data.id}`
+    link.textContent = this._data.name
+    title.title = `${this._data.name}. Click to view details`
+    title.appendChild(link)
+    content.appendChild(title)
+
+    const description = document.createElement('p')
+    description.classList.add('card-description')
+    description.textContent = this._data.description
+
+    return content
   }
 }
 
-customElements.define('card-component', CardComponent)
+export default Card
