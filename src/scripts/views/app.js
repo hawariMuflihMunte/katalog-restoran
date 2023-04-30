@@ -40,6 +40,14 @@ class App {
 
     this._content.innerHTML = await page.render()
     await page.afterRender()
+
+    const mainContent = document.querySelector('main[role="main"')
+    const skipToContent = document.querySelector('.skip')
+    skipToContent.addEventListener('click', (event) => {
+      event.preventDefault()
+      mainContent.scrollIntoView({ behavior: 'smooth' })
+      skipToContent.blur()
+    })
   }
 }
 
