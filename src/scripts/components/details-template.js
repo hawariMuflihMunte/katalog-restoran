@@ -143,14 +143,6 @@ const DetailsTemplate = {
     return reviewBox
   },
 
-  _favoriteButton () {
-    const button = document.createElement('button')
-    button.classList.add('favorite-button')
-    button.textContent = '🧡'
-
-    return button
-  },
-
   render () {
     const container = document.createElement('article')
     container.classList.add('details')
@@ -210,9 +202,6 @@ const DetailsTemplate = {
       customerFeedbackBox.appendChild(reviewContainer)
     })
     container.appendChild(customerFeedbackBox)
-
-    const favButton = this._favoriteButton()
-    container.appendChild(favButton)
 
     return container
   }
