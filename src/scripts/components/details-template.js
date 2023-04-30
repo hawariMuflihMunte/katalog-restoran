@@ -48,6 +48,7 @@ const DetailsTemplate = {
     image.loading = 'lazy'
     image.src = `${BASE_API_IMAGE_URL}${pictureId}`
     image.alt = `Picture of ${name}`
+    image.crossOrigin = 'anonymous'
 
     return image
   },

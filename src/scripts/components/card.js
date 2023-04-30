@@ -18,6 +18,7 @@ const Card = {
     image.loading = 'lazy'
     image.src = `${this._BASE_API_IMAGE_URL}${this._data.pictureId}`
     image.alt = `Picture of ${this._data.name}`
+    image.crossOrigin = 'anonymous'
     content.append(image)
 
     const city = document.createElement('span')
