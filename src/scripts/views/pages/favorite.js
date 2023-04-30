@@ -1,5 +1,5 @@
-import FavoriteRestaurantIdb from "../../../data/favorite-restaurant-idb"
-import Card from "../../components/card"
+import FavoriteRestaurantIdb from '../../../data/favorite-restaurant-idb'
+import Card from '../../components/card'
 
 const Favorite = {
   async render () {
