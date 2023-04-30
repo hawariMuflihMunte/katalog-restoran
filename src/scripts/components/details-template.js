@@ -179,7 +179,7 @@ const DetailsTemplate = {
     container.appendChild(hr)
 
     const customerFeedbackBox = document.createElement('div')
-    customerFeedbackBox.classList.add('customer-feedback-box')
+    customerFeedbackBox.classList.add('customer-feedback-boxes')
 
     const customerFeedbackBoxTitle = document.createElement('h3')
     customerFeedbackBoxTitle.textContent = 'User Reviews'
