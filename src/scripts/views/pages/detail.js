@@ -1,6 +1,7 @@
 import ApiEndpoint from '../../utils/api-endpoint'
 import DetailsTemplate from '../../components/details-template'
 import UrlParser from '../../routes/url-parser'
+import FavoriteButtonInitiator from '../../utils/favorite-button-initiator'
 
 const Detail = {
   async render () {
@@ -11,6 +12,7 @@ const Detail = {
         <section id="details-container" role="list">
           <!-- JS async render -->
         </section>
+        <button class="add-to-favorite">🧡</button>
       </section>
     `
   },
@@ -21,7 +23,11 @@ const Detail = {
       const getId = url.id
 
       const data = await ApiEndpoint.getDetail(getId)
-      console.log(data.restaurant)
+
+      FavoriteButtonInitiator.init({
+        buttonContainer: document.querySelector('.add-to-favorite'),
+        restaurant: data.restaurant
+      })
 
       const details = DetailsTemplate.init(data.restaurant).render()
       document.getElementById('details-container').appendChild(details)
