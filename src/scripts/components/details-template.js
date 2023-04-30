@@ -62,6 +62,7 @@ const DetailsTemplate = {
 
     const headerRow = document.createElement('tr')
     const header = document.createElement('th')
+    header.setAttribute('colspan', '2')
     header.textContent = 'Information'
     headerRow.appendChild(header)
 
@@ -178,13 +179,12 @@ const DetailsTemplate = {
     const hr = document.createElement('hr')
     container.appendChild(hr)
 
-    const customerFeedbackBox = document.createElement('div')
-    customerFeedbackBox.classList.add('customer-feedback-boxes')
-
     const customerFeedbackBoxTitle = document.createElement('h3')
     customerFeedbackBoxTitle.textContent = 'User Reviews'
+    container.appendChild(customerFeedbackBoxTitle)
 
-    customerFeedbackBox.appendChild(customerFeedbackBoxTitle)
+    const customerFeedbackBox = document.createElement('div')
+    customerFeedbackBox.classList.add('customer-feedback-boxes')
 
     this._customerReviews.forEach(review => {
       const reviewContainer = this._reviews({ customerReviews: review })
