@@ -60,6 +60,8 @@ const DetailsTemplate = {
     const tabularHeader = document.createElement('thead')
     const tabularBody = document.createElement('tbody')
 
+    tabularContainer.classList.add('information-table')
+
     const headerRow = document.createElement('tr')
     const header = document.createElement('th')
     header.setAttribute('colspan', '2')
