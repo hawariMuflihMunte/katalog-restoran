@@ -284,6 +284,18 @@ a.home-button {
     margin-top: 10px;
 }
 
+button.add-to-favorite {
+    border-radius: 50%;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35);
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+    min-width: 44px;
+    min-height: 44px;
+    background-color: white;
+}
+
 footer {
     margin-top: 30px;
     width: 100%;
