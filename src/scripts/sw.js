@@ -26,7 +26,9 @@ const assetsToCache = [
   'https://fonts.gstatic.com',
   'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap',
   // Google Material Symbols
-  'https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,300,1,200'
+  'https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,300,1,200',
+  // API Base URL
+  'https://restaurant-api.dicoding.dev/'
 ]
 
 self.addEventListener('install', (event) => {
