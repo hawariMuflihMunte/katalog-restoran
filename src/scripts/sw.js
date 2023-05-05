@@ -13,14 +13,20 @@ const assetsToCache = [
   './icons/icon-192x192.png',
   './icons/icon-384x384.png',
   './icons/icon-512x512.png',
-  './favicon-16x16.png',
-  './favicon-32x32.png',
+  './icons/favicon-32x32.png',
+  './icons/favicon-16x16.png',
   './images/heros/hero.webp',
   './images/heros/hero.jpg',
   './index.html',
-  './app.bundle.js',
   './manifest.json',
-  './sw.bundle.js'
+  './app.bundle.js',
+  './sw.bundle.js',
+  // Google Fonts
+  'https://fonts.googleapis.com',
+  'https://fonts.gstatic.com',
+  'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap',
+  // Google Material Symbols
+  'https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,300,1,200'
 ]
 
 self.addEventListener('install', (event) => {
