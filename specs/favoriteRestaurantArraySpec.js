@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import itActsAsFavoriteRestaurant, {} from './contract/favoriteRestaurantContract'
+import itActsAsFavoriteRestaurant from './contract/favoriteRestaurantContract'
 
 let favoriteRestaurant = []
 

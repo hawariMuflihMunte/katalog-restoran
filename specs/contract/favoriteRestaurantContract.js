@@ -25,7 +25,7 @@ const itActsAsFavoriteRestaurant = (favoriteRestaurantFunc) => {
     favoriteRestaurantFunc.putRestaurant({ id: 2 })
 
     expect(await favoriteRestaurantFunc.getAllRestaurants())
-      .expect([
+      .toEqual([
         { id: 1 },
         { id: 2 }
       ])
