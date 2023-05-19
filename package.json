@@ -8,9 +8,10 @@
     "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist/",
     "build-serve": "npm run build && npm run serve",
-    "test": "karma start",
     "lint": "eslint ./",
-    "lint-fix": "eslint --fix ./"
+    "lint-fix": "eslint --fix ./",
+    "test": "karma start",
+    "test-single-run": "karma start --single-run"
   },
   "repository": {
     "url": "https://github.com/hawariMuflihMunte/katalog-restoran.git"
