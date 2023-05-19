@@ -34,6 +34,7 @@ const FavoriteButtonInitiator = {
   _renderFavorite (restaurant) {
     this._buttonContainer.textContent = '🧡'
     this._buttonContainer.title = 'Add to favorite list 🧡'
+    this._buttonContainer.setAttribute('aria-label', 'Like this restaurant and add to favorite list')
 
     this._buttonContainer.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.putRestaurant(restaurant)
@@ -44,6 +45,7 @@ const FavoriteButtonInitiator = {
   _renderUnfavorite (id) {
     this._buttonContainer.textContent = '💔'
     this._buttonContainer.title = 'Remove from favorite list 💔'
+    this._buttonContainer.setAttribute('aria-label', 'Unlike this restaurant and remove from favorite list')
 
     this._buttonContainer.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.deleteRestaurant(id)
