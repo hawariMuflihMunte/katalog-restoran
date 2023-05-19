@@ -34,7 +34,7 @@ const FavoriteRestaurantIdb = {
       return false
     }
 
-    if (this.getRestaurant(restaurant.id)) {
+    if (await this.getRestaurant(restaurant.id)) {
       return false
     }
 
