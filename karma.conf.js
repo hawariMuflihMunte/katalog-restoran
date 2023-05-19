@@ -22,14 +22,16 @@ module.exports = function (config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
+    webpack: require('./webpack.common'),
+
     preprocessors: {
-      'specs/**/*Spec.js': ['webpack', 'sourcemap']
+      'specs/**/*Spec.js': ['webpack']
     },
 
     webpackMiddleware: {
       // webpack-dev-middleware configuration
       // i. e.
-      stats: 'errors-only'
+      stats: 'progress'
     },
 
     // test results reporter to use
