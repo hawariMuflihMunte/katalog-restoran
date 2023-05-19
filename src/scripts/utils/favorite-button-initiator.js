@@ -1,5 +1,10 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb'
 
+/**
+ * @param buttonContainer is used for place HTMLElement
+ * @param restaurant is the data passed from API
+ */
+
 const FavoriteButtonInitiator = {
   async init ({
     buttonContainer,
