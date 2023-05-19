@@ -13,6 +13,7 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'specs/**/*Spec.js'
     ],
 
     // list of files / patterns to exclude
@@ -22,6 +23,13 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
     preprocessors: {
+      'specs/**/*Spec.js': ['webpack', 'sourcemap']
+    },
+
+    webpackMiddleware: {
+      // webpack-dev-middleware configuration
+      // i. e.
+      stats: 'errors-only'
     },
 
     // test results reporter to use
