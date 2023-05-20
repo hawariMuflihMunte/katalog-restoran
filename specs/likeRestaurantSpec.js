@@ -30,7 +30,7 @@ describe('Liking a restaurant', () => {
   })
 
   afterEach(async () => {
-    await FavoriteRestaurantIdb.deleteRestaurant('fnfn8mytkpmkfw1e867')
+    await FavoriteRestaurantIdb.deleteRestaurant(dummyData().id)
   })
 
   it('should show the like button when the restaurant has not been liked before', () => {
