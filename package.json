@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && npm run build-image",
     "serve": "http-server dist/",
     "build-serve": "npm run build && npm run serve",
     "lint": "eslint ./",
