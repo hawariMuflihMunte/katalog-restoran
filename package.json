@@ -35,6 +35,8 @@
     "eslint-plugin-promise": "^6.1.1",
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
     "jasmine": "^5.0.0",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^4.2.0",
