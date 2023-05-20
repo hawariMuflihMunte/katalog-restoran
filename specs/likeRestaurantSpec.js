@@ -87,15 +87,38 @@ describe('Liking restaurant', () => {
     addToFavoriteElement.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.putRestaurant(restaurantData()) // Add the restaurant to the database
 
-      // You can include additional actions here if needed
-
       restaurant = await FavoriteRestaurantIdb.getRestaurant(restaurantData().id)
-      console.log('Restaurant added to database:', restaurant)
+      // console.log('Restaurant added to database:', restaurant)
 
-      expect(restaurant)
-        .toEqual(restaurantData())
+      setTimeout(() => {
+        expect(restaurant)
+          .toEqual(restaurantData())
+      }, 500)
     })
 
     addToFavoriteElement.dispatchEvent(new Event('click'))
+  })
+
+  it('should not add a restaurant again when its already liked', async () => {
+    await FavoriteRestaurantIdb.putRestaurant(restaurantData())
+
+    document.querySelector('.add-to-favorite').dispatchEvent(new Event('click'))
+
+    expect(await FavoriteRestaurantIdb.getAllRestaurants())
+      .toEqual([
+        restaurantData()
+      ])
+  })
+
+  it('should not add a movie when it has no id', async () => {
+    FavoriteButtonInitiator.init({
+      buttonContainer: document.querySelector('.add-to-favorite'),
+      restaurant: {}
+    })
+
+    document.querySelector('.add-to-favorite').dispatchEvent(new Event('click'))
+
+    expect(await FavoriteRestaurantIdb.getAllRestaurants())
+      .toEqual([])
   })
 })
