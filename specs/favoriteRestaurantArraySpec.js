@@ -30,7 +30,7 @@ const FavoriteRestaurantArray = {
   },
 
   deleteRestaurant (id) {
-    favoriteRestaurant = favoriteRestaurant.filter((movie) => movie.id !== id)
+    favoriteRestaurant = favoriteRestaurant.filter((restaurant) => restaurant.id !== id)
   }
 }
 
