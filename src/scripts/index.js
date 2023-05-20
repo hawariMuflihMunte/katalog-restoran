@@ -5,6 +5,9 @@ import '../styles/main.scss'
 import App from './views/app'
 import swRegister from './utils/sw-register'
 
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
+
 const app = new App({
   drawer: {
     button: document.querySelector('.nav-drawer'),

@@ -6,8 +6,11 @@ const NowShowing = {
     return `
       <section class="hero-banner" role="banner">
         <picture>
-          <source srcset="./images/heros/hero.webp" type="image/webp">
-          <img src="./images/heros/hero.jpg" alt="Food in a bowl and a bunch of flowers on the side of the bowl">
+          <source media="(max-width: 600px)" srcset="./images/hero-small.jpg" type="image/jpg">
+          <img
+            src="./images/hero-large.jpg"
+            alt="Food in a bowl and a bunch of flowers on the side of the bowl"
+          />
         </picture>
       </section>
       <section id="content" class="container">

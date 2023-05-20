@@ -14,9 +14,8 @@ const Card = {
     content.setAttribute('role', 'listitem')
 
     const image = document.createElement('img')
-    image.classList.add('card-img')
-    image.loading = 'lazy'
-    image.src = `${this._BASE_API_IMAGE_URL}${this._data.pictureId}`
+    image.classList.add('card-img', 'lazyload')
+    image.setAttribute('data-src', `${this._BASE_API_IMAGE_URL}${this._data.pictureId}`)
     image.alt = `Picture of ${this._data.name}`
     image.crossOrigin = 'anonymous'
     content.append(image)
