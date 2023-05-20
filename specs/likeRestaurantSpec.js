@@ -2,6 +2,7 @@
 
 import FavoriteRestaurantIdb from '../src/data/favorite-restaurant-idb'
 import FavoriteButtonInitiator from '../src/scripts/utils/favorite-button-initiator'
+import dummyData from './data/dummy'
 
 describe('Liking a restaurant', () => {
   const likeButtonContainer = () => {
@@ -16,47 +17,12 @@ describe('Liking a restaurant', () => {
     `
   }
 
-  // Dummy
-  const restaurantData = () => {
-    return {
-      id: 'fnfn8mytkpmkfw1e867',
-      name: 'Makan mudah',
-      description: 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.',
-      city: 'Medan',
-      address: 'Jln. Pandeglang no 19',
-      pictureId: '22',
-      categories: [
-        {
-          name: 'Jawa'
-        }
-      ],
-      menus: {
-        foods: [
-          {
-            name: 'Kari kacang dan telur'
-          }
-        ],
-        drinks: [
-          {
-            name: 'Minuman soda'
-          }
-        ]
-      },
-      rating: 3.7,
-      customerReviews: [
-        {
-          name: 'Gilang',
-          review: 'Harganya murah sekali!',
-          date: '14 Agustus 2018'
-        }
-      ]
-    }
-  }
+  dummyData()
 
   const initLikeButton = () => {
     FavoriteButtonInitiator.init({
       buttonContainer: document.querySelector('.add-to-favorite'),
-      restaurant: restaurantData()
+      restaurant: dummyData()
     })
   }
 
@@ -85,14 +51,14 @@ describe('Liking a restaurant', () => {
     let restaurant
 
     addToFavoriteElement.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.putRestaurant(restaurantData()) // Add the restaurant to the database
+      await FavoriteRestaurantIdb.putRestaurant(dummyData()) // Add the restaurant to the database
 
-      restaurant = await FavoriteRestaurantIdb.getRestaurant(restaurantData().id)
+      restaurant = await FavoriteRestaurantIdb.getRestaurant(dummyData().id)
       // console.log('Restaurant added to database:', restaurant)
 
       setTimeout(() => {
         expect(restaurant)
-          .toEqual(restaurantData())
+          .toEqual(dummyData())
       }, 500)
     })
 
@@ -100,13 +66,13 @@ describe('Liking a restaurant', () => {
   })
 
   it('should not add a restaurant again when its already liked', async () => {
-    await FavoriteRestaurantIdb.putRestaurant(restaurantData())
+    await FavoriteRestaurantIdb.putRestaurant(dummyData())
 
     document.querySelector('.add-to-favorite').dispatchEvent(new Event('click'))
 
     expect(await FavoriteRestaurantIdb.getAllRestaurants())
       .toEqual([
-        restaurantData()
+        dummyData()
       ])
   })
 
