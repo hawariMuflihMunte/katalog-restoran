@@ -12,7 +12,8 @@
     "lint-fix": "eslint --fix ./",
     "test": "karma start",
     "test-single-run": "karma start --single-run",
-    "e2e": "npx codeceptjs run --steps"
+    "e2e": "npx codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "repository": {
     "url": "https://github.com/hawariMuflihMunte/katalog-restoran.git"
