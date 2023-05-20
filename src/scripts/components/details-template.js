@@ -1,8 +1,6 @@
 import CONFIG from '../global/config'
 import './review-box' // <review-box>
 
-CONFIG.BASE_API_IMAGE_URL = 'https://restaurant-api.dicoding.dev/images/large/'
-
 const DetailsTemplate = {
   init (data) {
     const {

@@ -1,5 +1,10 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb'
 
+/**
+ * @param buttonContainer is used for place HTMLElement
+ * @param restaurant is the data passed from API
+ */
+
 const FavoriteButtonInitiator = {
   async init ({
     buttonContainer,
@@ -27,8 +32,13 @@ const FavoriteButtonInitiator = {
   },
 
   _renderFavorite (restaurant) {
+    if (!this._buttonContainer) {
+      return false
+    }
+
     this._buttonContainer.textContent = '🧡'
     this._buttonContainer.title = 'Add to favorite list 🧡'
+    this._buttonContainer.setAttribute('aria-label', 'Like this restaurant and add to favorite list')
 
     this._buttonContainer.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.putRestaurant(restaurant)
@@ -37,8 +47,13 @@ const FavoriteButtonInitiator = {
   },
 
   _renderUnfavorite (id) {
+    if (!this._buttonContainer) {
+      return false
+    }
+
     this._buttonContainer.textContent = '💔'
     this._buttonContainer.title = 'Remove from favorite list 💔'
+    this._buttonContainer.setAttribute('aria-label', 'Unlike this restaurant and remove from favorite list')
 
     this._buttonContainer.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.deleteRestaurant(id)
