@@ -1,4 +1,5 @@
 const { merge } = require('webpack-merge')
+// eslint-disable-next-line no-unused-vars
 const path = require('path')
 const common = require('./webpack.common')
 
