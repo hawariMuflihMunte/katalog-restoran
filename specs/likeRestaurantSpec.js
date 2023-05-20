@@ -74,7 +74,7 @@ describe('Liking a restaurant', () => {
       ])
   })
 
-  it('should not add a movie when it has no id', async () => {
+  it('should not add a restaurant when it has no id', async () => {
     FavoriteButtonInitiator.init({
       buttonContainer: document.querySelector('.add-to-favorite'),
       restaurant: {}
