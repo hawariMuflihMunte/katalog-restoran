@@ -17,8 +17,6 @@ describe('Liking a restaurant', () => {
     `
   }
 
-  dummyData()
-
   const initLikeButton = () => {
     FavoriteButtonInitiator.init({
       buttonContainer: document.querySelector('.add-to-favorite'),
