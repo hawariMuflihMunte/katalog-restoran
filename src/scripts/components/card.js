@@ -17,8 +17,8 @@ const Card = {
     image.classList.add('card-img', 'lazyload')
     image.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/128px-Placeholder_view_vector.svg.png'
     image.setAttribute('data-src', `${this._BASE_API_IMAGE_URL}${this._data.pictureId}`)
+    image.setAttribute('crossorigin', 'anonymous')
     image.alt = `Picture of ${this._data.name}`
-    image.crossOrigin = 'anonymous'
     content.append(image)
 
     const city = document.createElement('span')
