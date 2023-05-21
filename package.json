@@ -13,7 +13,8 @@
     "test": "karma start",
     "test-single-run": "karma start --single-run",
     "e2e": "npx codeceptjs run --steps",
-    "build-image": "node sharp.js"
+    "build-image": "node sharp.js",
+    "live-server": "node server.js"
   },
   "repository": {
     "url": "https://github.com/hawariMuflihMunte/katalog-restoran.git"
@@ -65,6 +66,7 @@
   "dependencies": {
     "idb": "^7.1.1",
     "lazysizes": "^5.3.2",
+    "live-server": "^1.2.2",
     "regenerator-runtime": "^0.13.9"
   }
 }

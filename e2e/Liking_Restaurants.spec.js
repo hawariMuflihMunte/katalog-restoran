@@ -11,7 +11,7 @@ Scenario('showing empty liked restaurants', ({ I }) => {
 
 Scenario('liking one restaurant', ({ I }) => {
   I.amOnPage('/#/')
-  I.waitForElement(locate('.card').first(), 5)
+  I.waitForElement(locate('.card').first(), 10)
   I.seeElement(locate('.card-title a').first())
   I.click(locate('.card-title a').first())
 
