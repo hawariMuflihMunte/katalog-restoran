@@ -61,12 +61,14 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpack-merge": "^5.8.0",
-    "whatwg-fetch": "^3.6.2"
+    "whatwg-fetch": "^3.6.2",
+    "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
     "idb": "^7.1.1",
     "lazysizes": "^5.3.2",
     "live-server": "^1.2.2",
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
+    "workbox-window": "^6.5.4"
   }
 }
