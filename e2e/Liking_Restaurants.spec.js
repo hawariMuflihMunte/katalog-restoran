@@ -3,6 +3,7 @@ Feature('Liking Restaurants')
 
 Before(({ I }) => {
   I.amOnPage('/#/favorite')
+  I.wait(5)
 })
 
 Scenario('showing empty liked restaurants', ({ I }) => {
