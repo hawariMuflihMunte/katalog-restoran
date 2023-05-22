@@ -3,6 +3,8 @@ const { merge } = require('webpack-merge')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 const ImageminMozjpeg = require('imagemin-mozjpeg')
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
@@ -30,7 +32,8 @@ module.exports = merge(common, {
           progressive: true
         })
       ]
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ],
   optimization: {
     splitChunks: {
