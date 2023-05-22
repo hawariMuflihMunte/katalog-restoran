@@ -1,3 +1,4 @@
+const path = require('path')
 const common = require('./webpack.common')
 const { merge } = require('webpack-merge')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
@@ -33,7 +34,8 @@ module.exports = merge(common, {
         })
       ]
     }),
-    new WorkboxWebpackPlugin.GenerateSW({
+    new WorkboxWebpackPlugin.InjectManifest({
+      swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
       swDest: './sw.bundle.js'
     })
   ],
