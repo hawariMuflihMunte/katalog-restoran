@@ -3,7 +3,7 @@ const { merge } = require('webpack-merge')
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 const ImageminMozjpeg = require('imagemin-mozjpeg')
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -33,7 +33,9 @@ module.exports = merge(common, {
         })
       ]
     }),
-    new BundleAnalyzerPlugin()
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js'
+    })
   ],
   optimization: {
     splitChunks: {
